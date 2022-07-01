@@ -2,15 +2,19 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: IslandWithTrees-Plane3
   m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
-  m_ShaderKeywords: DR_SPECULAR_ON _CELPRIMARYMODE_SINGLE _TEXTUREBLENDINGMODE_MULTIPLY
-    _UNITYSHADOWMODE_MULTIPLY
+  m_ValidKeywords:
+  - DR_SPECULAR_ON
+  - _CELPRIMARYMODE_SINGLE
+  - _TEXTUREBLENDINGMODE_MULTIPLY
+  - _UNITYSHADOWMODE_MULTIPLY
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -90,9 +94,9 @@ Material:
     - _FlatRimSize: 0.13
     - _FlatShadowsEnabled: 1
     - _FlatSmoothness: 0.362
-    - _FlatSpecularEdgeSmoothness: 0.143
+    - _FlatSpecularEdgeSmoothness: 0.107
     - _FlatSpecularEnabled: 1
-    - _FlatSpecularSize: 0.406
+    - _FlatSpecularSize: 0.245
     - _FlatSpecularSmoothness: 0.5
     - _Flatness: 0.37
     - _FlatnessExtra: 1
@@ -147,10 +151,10 @@ Material:
     - _VertexColorsEnabled: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.8, g: 0.5786757, b: 0.24705878, a: 1}
+    - _BaseColor: {r: 0.16553926, g: 0.6989508, b: 0.8490566, a: 1}
     - _Color: {r: 0.8, g: 0.5786757, b: 0.24705882, a: 1}
     - _ColorCelShadow: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _ColorDim: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 0.85}
+    - _ColorDim: {r: 0.34638658, g: 0.38983765, b: 0.3962264, a: 0.85}
     - _ColorDimCurve: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
     - _ColorDimExtra: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
     - _ColorDimSteps: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
@@ -160,7 +164,7 @@ Material:
     - _ColorShadows: {r: 0.19742335, g: 0.11854753, b: 0.2264151, a: 1}
     - _EmissionColor: {r: 4.9245777, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 0.49928805, g: 0.5660378, b: 0.5633972, a: 1}
-    - _FlatSpecularColor: {r: 0.6886792, g: 0.34640682, b: 0.09420614, a: 1}
+    - _FlatSpecularColor: {r: 0.2536489, g: 0.82371014, b: 0.8490566, a: 1}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnityShadowColor: {r: 0.65, g: 0.65, b: 0.65, a: 1}
