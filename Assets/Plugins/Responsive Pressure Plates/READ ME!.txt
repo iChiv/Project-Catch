@@ -1,0 +1,12 @@
+
+Thank you for using Monqo's <<Responsive Pressure Plates Pack>>!
+
+For questions and/or feedback,
+Email: info@monqo.net
+Discord: Monqo#0189
+
+HOW TO USE THE PRESSURE PLATES:
+1. Drag a Pressure Plate prefab in your scene.
+2. Under 'Responsivity' in the Pressure Plate, select the tag the Pressure Plate should interact with.
+3. Assign functions to the events (On Tag Collision Enter, On Tag Collision Exit, On Tag Collision Stay).
+4. You can edit other settings like the Audio and Animations below.
