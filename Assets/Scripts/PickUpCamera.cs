@@ -15,7 +15,7 @@ public class PickUpCamera : MonoBehaviour
     void Start()
     {
         MainCam = GameObject.Find("Main Camera");
-        //Player = MainCam.transform.parent.gameObject;
+        Player = MainCam.transform.parent.gameObject;
         CamForPlayer = MainCam.transform.GetChild(0).gameObject;
         Canvas = GameObject.Find("Canvas");
         Check = Canvas.transform.GetChild(1).gameObject;
@@ -34,20 +34,13 @@ public class PickUpCamera : MonoBehaviour
                     hit.collider.gameObject.SetActive(false);
                     CamForPlayer.gameObject.SetActive(true);
                     Check.gameObject.SetActive(false);
+                    Player.GetComponent<Foucs>().enabled = true;
                 }
             }
-           
+        else
+        {
+            Check.gameObject.SetActive(false);
         }
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    if (Physics.Raycast(transform.position, transform.forward, out hit, 100))
-        //    {
-        //        if(hit.collider.tag == "camObj")
-        //        {
-        //            hit.collider.gameObject.SetActive(false);
-        //            CamForPlayer.gameObject.SetActive(true);
-         //       }
-           // }
-        //}
+        }
     }
 }
