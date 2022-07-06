@@ -21,12 +21,22 @@ public class Foucs : MonoBehaviour
     }
 
     // Update is called once per frame
+    [System.Obsolete]
     void FixedUpdate()
     {
         if(Input.GetMouseButtonDown(1))
         {
-            CamForPlayer.gameObject.SetActive(false);
-            CamUI.gameObject.SetActive(true);
+            if(CamForPlayer.gameObject.activeSelf == true)
+            { 
+             CamForPlayer.gameObject.SetActive(false);
+             CamUI.gameObject.SetActive(true);
+             Player.GetComponent<PlaceThings>().enabled = true;
+            }
+            else
+            {
+                CamForPlayer.gameObject.SetActive(true);
+                CamUI.gameObject.SetActive(false);
+            }
         }
     }
 }

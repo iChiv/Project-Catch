@@ -24,9 +24,9 @@ public class PickUpCamera : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Physics.Raycast(transform.position, transform.forward, out hit , 10))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
         {
-            if(hit.collider.tag == "camObj")
+            if (hit.collider.tag == "camObj")
             {
                 Check.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
@@ -37,10 +37,11 @@ public class PickUpCamera : MonoBehaviour
                     Player.GetComponent<Foucs>().enabled = true;
                 }
             }
-        else
-        {
-            Check.gameObject.SetActive(false);
-        }
+       
+            else
+            {
+                Check.gameObject.SetActive(false);
+            }
         }
     }
 }
