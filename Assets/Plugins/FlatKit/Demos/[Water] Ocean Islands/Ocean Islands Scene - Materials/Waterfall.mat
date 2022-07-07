@@ -145,7 +145,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 1, b: 0.7287984, a: 1}
     - _ColorDeep: {r: 0.6367924, g: 0.8860948, b: 1, a: 1}
-    - _ColorShallow: {r: 0.5235849, g: 0.8514405, b: 1, a: 0.8156863}
+    - _ColorShallow: {r: 0.52358484, g: 0.8514405, b: 1, a: 1}
     - _CrestColor: {r: 1, g: 1, b: 1, a: 0.9}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.9975696, g: 1, b: 0.9575471, a: 0.8}
