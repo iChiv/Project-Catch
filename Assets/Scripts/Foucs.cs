@@ -49,10 +49,11 @@ public class Foucs : MonoBehaviour
                 Project.gameObject.SetActive(false);
                 Video.gameObject.SetActive(false);
                 Player.GetComponent<CaptureThings>().enabled = false;
+                Player.GetComponent<PlaceThings>().enabled = false;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && Cam.gameObject.activeSelf == true)
         {
             if(Shoot.gameObject.activeSelf == true)
             {

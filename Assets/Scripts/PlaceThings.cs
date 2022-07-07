@@ -13,6 +13,13 @@ public class PlaceThings : MonoBehaviour
     GameObject Projection2;
     public GameObject DoorPicInProject;
     public GameObject DoorPicInShoot;
+    public GameObject DoorOpen2;
+    public GameObject DoorOpen3;
+
+    public GameObject DoorClose3;
+    public GameObject Projection3;
+    public GameObject GuideUIwasd;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +46,12 @@ public class PlaceThings : MonoBehaviour
                     Projection2.gameObject.SetActive(false);
                     DoorPicInProject.gameObject.SetActive(false);
                     DoorPicInShoot.gameObject.SetActive(false);
+                    DoorOpen2.GetComponent<BoxCollider>().enabled = true;
                 }
+            }
+            else
+            {
+                Projection2 .gameObject.SetActive(false);
             }
             if (hit.collider.tag == "AbleToPlace" && hit.collider.name == "DoorClose1")
             {
@@ -52,7 +64,35 @@ public class PlaceThings : MonoBehaviour
                     DoorPicInShoot.gameObject.SetActive(false);
                 }
             }
+            else
+            {
+                Projection1.gameObject.SetActive(false);
+            }
+
+            if (hit.collider.tag == "AbleToPlace" && hit.collider.name == "DoorClose3")
+            {
+                Projection3.gameObject.SetActive(true);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    DoorClose3.gameObject.SetActive(false);
+                    Projection3.gameObject.SetActive(false);
+                    DoorPicInProject.gameObject.SetActive(false);
+                    DoorPicInShoot.gameObject.SetActive(false);
+                    GuideUIwasd.gameObject.SetActive(false);
+                    DoorOpen3.GetComponent<BoxCollider>().enabled = true;
+                }
+            }
+            else
+            {
+                Projection3.gameObject.SetActive(false);
+            }
         }
         
+    }
+
+    private void OnDisable() 
+    {
+        Projection1.SetActive(false);
+        Projection2.SetActive(false);
     }
 }
