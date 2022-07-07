@@ -5,11 +5,10 @@ using UnityEngine;
 public class CaptureThings : MonoBehaviour
 {
     RaycastHit hit;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject DoorPicInShoot;
+    public GameObject DoorPicInProjection;
+    public GameObject DoorCapable;
+
 
     // Update is called once per frame
     void Update()
@@ -18,6 +17,16 @@ public class CaptureThings : MonoBehaviour
         {
             if(hit.collider.tag == "AbleToCapture" && hit.collider.name == "DoorOpen2")
             {
+                DoorCapable.SetActive(true);
+                if(Input.GetMouseButtonDown(0))
+                {
+                    DoorPicInShoot.SetActive(true);
+                    DoorPicInProjection.SetActive(true);
+                }
+            }
+            else
+            {
+                DoorCapable.SetActive(false);
             }
         }
     }
