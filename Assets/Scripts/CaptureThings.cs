@@ -8,6 +8,7 @@ public class CaptureThings : MonoBehaviour
     public GameObject DoorPicInShoot;
     public GameObject DoorPicInProjection;
     public GameObject DoorCapable;
+    public GameObject DoorCapable2;
 
 
     // Update is called once per frame
@@ -28,6 +29,27 @@ public class CaptureThings : MonoBehaviour
             {
                 DoorCapable.SetActive(false);
             }
+
+            if(hit.collider.tag == "AbleToCapture" && hit.collider.name == "DoorOpen3")
+            {
+                DoorCapable2.SetActive(true);
+                if(Input.GetMouseButtonDown(0))
+                {
+                    DoorPicInShoot.SetActive(true);
+                    DoorPicInProjection.SetActive(true);
+                }
+            }
+            else
+            {
+                DoorCapable2.SetActive(false);
+            }
         }
+    }
+
+    private void OnDisable() 
+    {
+        DoorCapable.SetActive(false);
+        DoorCapable2.SetActive(false);
+        
     }
 }

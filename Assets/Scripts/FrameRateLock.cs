@@ -8,6 +8,8 @@ public class FrameRateLock : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
