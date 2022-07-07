@@ -9,6 +9,10 @@ public class Foucs : MonoBehaviour
     GameObject Player;
     GameObject Canvas;
     GameObject CamUI;
+    GameObject Cam;
+    GameObject Project;
+    GameObject Shoot;
+    GameObject Video;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +22,10 @@ public class Foucs : MonoBehaviour
         CamForPlayer = MainCam.transform.GetChild(0).gameObject;
         Canvas = GameObject.Find("Canvas");
         CamUI = Canvas.transform.GetChild(0).gameObject;
+        Cam = CamUI.transform.GetChild(3).gameObject;
+        Project = CamUI.transform.GetChild(1).gameObject;
+        Shoot = CamUI.transform.GetChild(0).gameObject;
+        Video = CamUI.transform.GetChild(2).gameObject;
     }
 
     // Update is called once per frame
@@ -28,15 +36,56 @@ public class Foucs : MonoBehaviour
         {
             if(CamForPlayer.gameObject.activeSelf == true)
             { 
-             CamForPlayer.gameObject.SetActive(false);
-             CamUI.gameObject.SetActive(true);
-             Player.GetComponent<PlaceThings>().enabled = true;
+                CamForPlayer.gameObject.SetActive(false);
+                Cam.gameObject.SetActive(true);
+                Shoot.gameObject.SetActive(true);
+                Player.GetComponent<CaptureThings>().enabled = true;
             }
             else
             {
                 CamForPlayer.gameObject.SetActive(true);
-                CamUI.gameObject.SetActive(false);
+                Cam.gameObject.SetActive(false);
+                Shoot.gameObject.SetActive(false);
+                Project.gameObject.SetActive(false);
+                Video.gameObject.SetActive(false);
+                Player.GetComponent<CaptureThings>().enabled = false;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if(Shoot.gameObject.activeSelf == true)
+            {
+                Shoot.gameObject.SetActive(false);
+                Project.gameObject.SetActive(true);
+                Player.GetComponent<CaptureThings>().enabled = false;
+                Player.GetComponent<PlaceThings>().enabled = true;
+            }
+            else
+            {
+                Shoot.gameObject.SetActive(true);
+                Project.gameObject.SetActive(false);
+                Player.GetComponent<CaptureThings>().enabled = true;
+                Player.GetComponent<PlaceThings>().enabled = false;
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            if(Shoot.gameObject.activeSelf == true)
+            {
+                if (Video.gameObject.activeSelf == false)
+                {
+                    Video.gameObject.SetActive(true);
+                }
+                else
+                {
+                    Video.gameObject.SetActive(false);
+                }
+            }
+
+        }
+
+
     }
 }

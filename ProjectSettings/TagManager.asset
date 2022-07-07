@@ -6,6 +6,7 @@ TagManager:
   tags:
   - camObj
   - AbleToPlace
+  - AbleToCapture
   layers:
   - Default
   - TransparentFX
