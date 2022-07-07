@@ -12,17 +12,6 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] float jumpFroce = 5;
     [SerializeField] float gravity = 5f;
 
-    //[SerializeField] float mouseSpeed = 5f;
-    //public float minMouseY = -45f;
-    //public float minMouseX = 45f;
-
-    //public float RotationY = 0f;
-    //public float RotationX = 0f;
-
-    //public Transform agretctCamera;
-
-    // Start is called before the first frame update
-    //[System.Obsolete]
     void Start()
     {
         playerController = GetComponent<CharacterController>();
@@ -47,10 +36,5 @@ public class PlayerMover : MonoBehaviour
 
         direction.y -= gravity * Time.deltaTime;
         playerController.Move(playerController.transform.TransformDirection(direction * moveSpeed * Time.deltaTime));
-
-        //RotationX += agretctCamera.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSpeed;
-        //RotationY -= Input.GetAxis("Mouse Y") * mouseSpeed;
-        //this.transform.eulerAngles = new Vector3(0, RotationX, 0);
-        //agretctCamera.transform.eulerAngles = new Vector3(RotationY, RotationX, 0);
     }
 }

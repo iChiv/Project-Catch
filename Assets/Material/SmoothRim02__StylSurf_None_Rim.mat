@@ -87,7 +87,7 @@ Material:
     - _CelNumSteps: 3
     - _CelPrimaryMode: 0
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.13
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FlatRimAmount: 0.5
