@@ -169,7 +169,7 @@ Material:
     - _BendTint: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.8301887, g: 0.22170983, b: 0.1461967, a: 1}
     - _FadeParams: {r: 50, g: 100, b: 0, a: 0}
     - _HeightmapScaleInfluence: {r: 0, g: 1, b: 0, a: 0}
     - _HueVariation: {r: 1, g: 0.4028053, b: 0, a: 1}
