@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlaceThings : MonoBehaviour
 {
+    public GameObject mainCam;
     RaycastHit hit;
     GameObject Gear;
     GameObject DoorClose2;
@@ -35,7 +36,7 @@ public class PlaceThings : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 30) && DoorPicInProject.activeSelf == true)
+        if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 30) && DoorPicInProject.activeSelf == true)
         {
             //Debug.Log(hit.collider.name);
             if(hit.collider.tag == "AbleToPlace"&& hit.collider.name == "DoorClose2")
@@ -94,5 +95,6 @@ public class PlaceThings : MonoBehaviour
     {
         Projection1.SetActive(false);
         Projection2.SetActive(false);
+        Projection3.gameObject.SetActive(false);
     }
 }

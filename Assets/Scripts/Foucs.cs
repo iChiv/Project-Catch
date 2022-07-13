@@ -50,6 +50,8 @@ public class Foucs : MonoBehaviour
                 Video.gameObject.SetActive(false);
                 Player.GetComponent<CaptureThings>().enabled = false;
                 Player.GetComponent<PlaceThings>().enabled = false;
+                Player.GetComponent<PlaceBridge>().enabled = false;
+                Player.GetComponent<PlaceBox>().enabled = false;
             }
         }
 
@@ -61,6 +63,8 @@ public class Foucs : MonoBehaviour
                 Project.gameObject.SetActive(true);
                 Player.GetComponent<CaptureThings>().enabled = false;
                 Player.GetComponent<PlaceThings>().enabled = true;
+                Player.GetComponent<PlaceBridge>().enabled = true;
+                Player.GetComponent<PlaceBox>().enabled = true;
             }
             else
             {
@@ -68,6 +72,8 @@ public class Foucs : MonoBehaviour
                 Project.gameObject.SetActive(false);
                 Player.GetComponent<CaptureThings>().enabled = true;
                 Player.GetComponent<PlaceThings>().enabled = false;
+                Player.GetComponent<PlaceBridge>().enabled = false;
+                Player.GetComponent<PlaceBox>().enabled = false;
             }
         }
 

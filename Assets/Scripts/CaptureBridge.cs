@@ -18,7 +18,7 @@ public class CaptureBridge : MonoBehaviour
     {
         if(Physics.Raycast(transform.position, transform.forward, out hit, 30))
         {
-            if(hit.collider.tag =="AblgeToCapture" && hit.collider.name =="bridge_block1")
+            if(hit.collider.tag =="AbleToCapture" && hit.collider.name =="bridge_block1")
             {
                 BlockChecked1.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
@@ -31,7 +31,7 @@ public class CaptureBridge : MonoBehaviour
             {
                 BlockChecked1.SetActive(false);
             }
-            if (hit.collider.tag == "AblgeToCapture" && hit.collider.name == "bridge_block2")
+            if (hit.collider.tag == "AbleToCapture" && hit.collider.name == "bridge_block2")
             {
                 BlockChecked2.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
@@ -44,7 +44,7 @@ public class CaptureBridge : MonoBehaviour
             {
                 BlockChecked2.SetActive(false);
             }
-            if (hit.collider.tag == "AblgeToCapture" && hit.collider.name == "bridge_block3")
+            if (hit.collider.tag == "AbleToCapture" && hit.collider.name == "bridge_block3")
             {
                 BlockChecked3.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
