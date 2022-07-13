@@ -35,8 +35,9 @@ public class PlaceThings : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 10) && DoorPicInProject.activeSelf == true)
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 30) && DoorPicInProject.activeSelf == true)
         {
+            //Debug.Log(hit.collider.name);
             if(hit.collider.tag == "AbleToPlace"&& hit.collider.name == "DoorClose2")
             {
                 Projection2.gameObject.SetActive(true);
@@ -68,7 +69,6 @@ public class PlaceThings : MonoBehaviour
             {
                 Projection1.gameObject.SetActive(false);
             }
-
             if (hit.collider.tag == "AbleToPlace" && hit.collider.name == "DoorClose3")
             {
                 Projection3.gameObject.SetActive(true);

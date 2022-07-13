@@ -5,6 +5,8 @@ using UnityEngine;
 public class CaptureThings : MonoBehaviour
 {
     RaycastHit hit;
+    public GameObject DoorOpen2;
+    public GameObject DoorOpen3;
     public GameObject DoorPicInShoot;
     public GameObject DoorPicInProjection;
     public GameObject DoorCapable;
@@ -14,12 +16,12 @@ public class CaptureThings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics.Raycast(transform.position, transform.forward, out hit,50))
+        if(Physics.Raycast(transform.position, transform.forward, out hit,30))
         {
-            if(hit.collider.tag == "AbleToCapture" && hit.collider.name == "DoorOpen2")
+            if (hit.collider.gameObject == DoorOpen2)
             {
                 DoorCapable.SetActive(true);
-                if(Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0))
                 {
                     DoorPicInShoot.SetActive(true);
                     DoorPicInProjection.SetActive(true);
@@ -30,7 +32,7 @@ public class CaptureThings : MonoBehaviour
                 DoorCapable.SetActive(false);
             }
 
-            if(hit.collider.tag == "AbleToCapture" && hit.collider.name == "DoorOpen3")
+            if (hit.collider.gameObject == DoorOpen3)
             {
                 DoorCapable2.SetActive(true);
                 if(Input.GetMouseButtonDown(0))
@@ -38,7 +40,7 @@ public class CaptureThings : MonoBehaviour
                     DoorPicInShoot.SetActive(true);
                     DoorPicInProjection.SetActive(true);
                 }
-            }
+            }   
             else
             {
                 DoorCapable2.SetActive(false);
