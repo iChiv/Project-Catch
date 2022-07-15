@@ -1,4 +1,0 @@
-repository "ProjectCatch@ssl://wechat_os_qy07unioxkzcqp-vuh8f5qlim@sh01-plasticscm.unity.cn:8787"
-  path "/"
-    br "/main"
-    co "/main"
