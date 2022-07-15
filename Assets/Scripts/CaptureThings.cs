@@ -59,10 +59,6 @@ public class CaptureThings : MonoBehaviour
                     DoorPicInProjection.SetActive(true);
                 }
             }
-            else
-            {
-                DoorCapable.SetActive(false);
-            }
             if (hit.collider.gameObject == DoorOpen3)
             {
                 DoorCapable2.SetActive(true);
@@ -71,10 +67,6 @@ public class CaptureThings : MonoBehaviour
                     DoorPicInShoot.SetActive(true);
                     DoorPicInProjection.SetActive(true);
                 }
-            }
-            else
-            {
-                DoorCapable2.SetActive(false);
             }   
             //cliff
             if (hit.collider.gameObject == Block1)
@@ -86,10 +78,6 @@ public class CaptureThings : MonoBehaviour
                     BridgePicInProjection.SetActive(true);
                 }
             }
-            else
-            {
-                BlockChecked1.SetActive(false);
-            }
             if (hit.collider.gameObject == Block2)
             {
                 BlockChecked2.SetActive(true);
@@ -98,10 +86,6 @@ public class CaptureThings : MonoBehaviour
                     BridgePicInShoot.SetActive(true);
                     BridgePicInProjection.SetActive(true);
                 }
-            }
-            else
-            {
-                BlockChecked2.SetActive(false);
             }
             if (hit.collider.gameObject == Block3)
             {
@@ -112,11 +96,6 @@ public class CaptureThings : MonoBehaviour
                     BridgePicInProjection.SetActive(true);
                 }
             }
-            else
-            {
-                BlockChecked3.SetActive(false);
-            }
-            //waterfall
             if(hit.collider.gameObject == Cube1)
             {
                 CubeChecked1.SetActive(true);
@@ -125,10 +104,6 @@ public class CaptureThings : MonoBehaviour
                     CubePicInShoot.SetActive(true);
                     CubePicInProjection.SetActive(true);
                 }
-            }
-            else
-            {
-                CubeChecked1.SetActive(false);
             }
             if (hit.collider.gameObject == Cube2)
             {
@@ -139,11 +114,7 @@ public class CaptureThings : MonoBehaviour
                     CubePicInProjection.SetActive(true);
                 }
             }
-            else
-            {
-                CubeChecked2.SetActive(false);
-            }
-            if (hit.collider.gameObject == Cube3 && CubePicInShoot.activeSelf ==false)
+            if (hit.collider.gameObject == Cube3)
             {
                 CubeChecked3.SetActive(true);
                 if (Input.GetMouseButtonDown(0) && CubeOK1.activeSelf == true)
@@ -152,11 +123,7 @@ public class CaptureThings : MonoBehaviour
                     CubePicInProjection.SetActive(true);
                 }
             }
-            else
-            {
-                CubeChecked3.SetActive(false);
-            }
-            if (hit.collider.gameObject == Cube4 && CubePicInShoot.activeSelf ==false)
+            if (hit.collider.gameObject == Cube4)
             {
                 CubeChecked4.SetActive(true);
                 if (Input.GetMouseButtonDown(0) && CubeOK2.activeSelf == true)
@@ -165,11 +132,7 @@ public class CaptureThings : MonoBehaviour
                     CubePicInProjection.SetActive(true);
                 }
             }
-            else
-            {
-                CubeChecked4.SetActive(false);
-            }
-            if (hit.collider.gameObject == Cube5 && CubePicInShoot.activeSelf ==false)
+            if (hit.collider.gameObject == Cube5 )
             {
                 CubeChecked5.SetActive(true);
                 if (Input.GetMouseButtonDown(0) && CubeOK3.activeSelf == true)
@@ -177,10 +140,6 @@ public class CaptureThings : MonoBehaviour
                     CubePicInShoot.SetActive(true);
                     CubePicInProjection.SetActive(true);
                 }
-            }
-            else
-            {
-                CubeChecked5.SetActive(false);
             }
         }
         else
