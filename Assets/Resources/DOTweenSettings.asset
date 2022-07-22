@@ -34,7 +34,7 @@ MonoBehaviour:
   defaultLoopType: 0
   debugMode: 0
   debugStoreTargetId: 1
-  showPreviewPanel: 0
+  showPreviewPanel: 1
   storeSettingsLocation: 0
   modules:
     showPanel: 0
@@ -48,6 +48,6 @@ MonoBehaviour:
     deAudioEnabled: 0
     deUnityExtendedEnabled: 0
     epoOutlineEnabled: 0
-  createASMDEF: 1
+  createASMDEF: 0
   showPlayingTweens: 0
   showPausedTweens: 0
