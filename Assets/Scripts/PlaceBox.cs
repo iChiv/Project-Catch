@@ -47,6 +47,7 @@ public class PlaceBox : MonoBehaviour
                 {
                     cubeOK2.SetActive(true);
                     cubeReady2.SetActive(false);
+                    cubeReady2.GetComponent<MeshRenderer>().enabled = false;
                     CubePicInShoot.SetActive(false);
                     CubePicInProjection.SetActive(false);
                 }
