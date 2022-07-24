@@ -17,7 +17,7 @@ public class Foucs : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("TestPlayer");
+        Player = GameObject.Find("Player");
         MainCam = Player.transform.GetChild(0).gameObject;
         CamForPlayer = MainCam.transform.GetChild(0).gameObject;
         Canvas = GameObject.Find("Canvas");
