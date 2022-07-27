@@ -28,7 +28,10 @@ public class CamUI : MonoBehaviour
                 UI.SetActive(true);
                 Catch.SetActive(false);
                 PHO.SetActive(false);
+<<<<<<< HEAD
                 Project.SetActive(true);
+=======
+>>>>>>> 8b2b3eb (UI control.)
                 testPlayer.GetComponent<CaptureThings>().enabled = true;
             }
             else if(CamforPlayer.activeSelf == false)
