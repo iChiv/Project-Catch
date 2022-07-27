@@ -12,8 +12,7 @@ public class PlaceDoors : MonoBehaviour
     GameObject DoorClose1;
     GameObject Projection1;
     GameObject Projection2;
-    public GameObject DoorPicInProject;
-    public GameObject DoorPicInShoot;
+    public GameObject DoorPic;
     public GameObject DoorOpen2;
     public GameObject DoorOpen3;
 
@@ -36,7 +35,7 @@ public class PlaceDoors : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 30) && DoorPicInProject.activeSelf == true)
+        if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 30) && DoorPic.activeSelf == true)
         {
             //Debug.Log(hit.collider.name);
             if(hit.collider.tag == "AbleToPlace"&& hit.collider.name == "DoorClose2")
@@ -46,8 +45,7 @@ public class PlaceDoors : MonoBehaviour
                 {
                     DoorClose2.gameObject.SetActive(false);
                     Projection2.gameObject.SetActive(false);
-                    DoorPicInProject.gameObject.SetActive(false);
-                    DoorPicInShoot.gameObject.SetActive(false);
+                    DoorPic.gameObject.SetActive(false);
                     DoorOpen2.GetComponent<BoxCollider>().enabled = true;
                 }
             }
@@ -62,8 +60,7 @@ public class PlaceDoors : MonoBehaviour
                 {
                     DoorClose1.gameObject.SetActive(false);
                     Projection1.gameObject.SetActive(false);
-                    DoorPicInProject.gameObject.SetActive(false);
-                    DoorPicInShoot.gameObject.SetActive(false);
+                    DoorPic.gameObject.SetActive(false);
                 }
             }
             else
@@ -77,8 +74,7 @@ public class PlaceDoors : MonoBehaviour
                 {
                     DoorClose3.gameObject.SetActive(false);
                     Projection3.gameObject.SetActive(false);
-                    DoorPicInProject.gameObject.SetActive(false);
-                    DoorPicInShoot.gameObject.SetActive(false);
+                    DoorPic.gameObject.SetActive(false);
                     GuideUIwasd.gameObject.SetActive(false);
                     DoorOpen3.GetComponent<BoxCollider>().enabled = true;
                 }

@@ -19,11 +19,10 @@ public class PlaceBox : MonoBehaviour
     public GameObject cubeOK2;
     public GameObject cubeOK3;
 
-    public GameObject CubePicInShoot;
-    public GameObject CubePicInProjection;
+    public GameObject CubePic;
     void Update()
     {
-        if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit) && CubePicInProjection.activeSelf == true)
+        if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit) && CubePic.activeSelf == true)
         {
             if(hit.collider.gameObject == cubeCheck1)
             {
@@ -32,8 +31,7 @@ public class PlaceBox : MonoBehaviour
                 {
                     cubeOK1.SetActive(true);
                     cubeReady1.SetActive(false);
-                    CubePicInShoot.SetActive(false);
-                    CubePicInProjection.SetActive(false);
+                    CubePic.SetActive(false);
                 }
             }
             else
@@ -48,8 +46,7 @@ public class PlaceBox : MonoBehaviour
                     cubeOK2.SetActive(true);
                     cubeReady2.SetActive(false);
                     cubeReady2.GetComponent<MeshRenderer>().enabled = false;
-                    CubePicInShoot.SetActive(false);
-                    CubePicInProjection.SetActive(false);
+                    CubePic.SetActive(false);
                 }
             }
             else
@@ -63,8 +60,7 @@ public class PlaceBox : MonoBehaviour
                 {
                     cubeOK3.SetActive(true);
                     cubeReady3.SetActive(false);
-                    CubePicInShoot.SetActive(false);
-                    CubePicInProjection.SetActive(false);
+                    CubePic.SetActive(false);
                 }
             }
             else

@@ -9,10 +9,17 @@ public class CaptureThings : MonoBehaviour
     RaycastHit hit;
     public GameObject DoorOpen2;
     public GameObject DoorOpen3;
-    public GameObject DoorPicInShoot;
-    public GameObject DoorPicInProjection;
-    public GameObject DoorCapable;
-    public GameObject DoorCapable2;
+    public GameObject DoorPic;
+    public GameObject DoorCapable11;
+    public GameObject DoorCapable12;
+    public GameObject DoorCapable13;
+    public GameObject DoorCapable14;
+    public GameObject DoorCapable15;
+    public GameObject DoorCapable16;
+
+    public GameObject DoorCapable21;
+    public GameObject DoorCapable22;
+    public GameObject DoorCapable23;
 
     //cliff
     public GameObject Block1;
@@ -22,8 +29,7 @@ public class CaptureThings : MonoBehaviour
     public GameObject BlockChecked2;
     public GameObject BlockChecked3;
 
-    public GameObject BridgePicInShoot;
-    public GameObject BridgePicInProjection;
+    public GameObject BridgePic;
     int layerMask = 1 << 6;
 
     //waterfall
@@ -41,40 +47,50 @@ public class CaptureThings : MonoBehaviour
     public GameObject CubeOK2;
     public GameObject CubeOK3;
 
-    public GameObject CubePicInShoot;
-    public GameObject CubePicInProjection;
+    public GameObject CubePic;
     // Update is called once per frame
     void Update()
     {
         if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit,5000,layerMask))
         {
-            //Debug.DrawRay(transform.position, transform.forward, Color.green);
             //Debug.Log(hit.collider.name);
             if (hit.collider.gameObject == DoorOpen2)
             {
-                DoorCapable.SetActive(true);
+                DoorCapable11.GetComponent<MeshRenderer>().enabled = true;
+                DoorCapable12.GetComponent<MeshRenderer>().enabled = true;
+                DoorCapable13.GetComponent<MeshRenderer>().enabled = true;
+                DoorCapable14.GetComponent<MeshRenderer>().enabled = true;
+                DoorCapable15.GetComponent<MeshRenderer>().enabled = true;
+                DoorCapable16.GetComponent<MeshRenderer>().enabled = true;
                 if (Input.GetMouseButtonDown(0))
                 {
-                    DoorPicInShoot.SetActive(true);
-                    DoorPicInProjection.SetActive(true);
+                    DoorPic.SetActive(true);
                 }
             }
             else
             {
-                DoorCapable.SetActive(false);
+                DoorCapable11.GetComponent<MeshRenderer>().enabled = false;
+                DoorCapable12.GetComponent<MeshRenderer>().enabled = false;
+                DoorCapable13.GetComponent<MeshRenderer>().enabled = false;
+                DoorCapable14.GetComponent<MeshRenderer>().enabled = false;
+                DoorCapable15.GetComponent<MeshRenderer>().enabled = false;
+                DoorCapable16.GetComponent<MeshRenderer>().enabled = false;
             }
             if (hit.collider.gameObject == DoorOpen3)
             {
-                DoorCapable2.SetActive(true);
-                if(Input.GetMouseButtonDown(0))
+                DoorCapable21.GetComponent<MeshRenderer>().enabled = true;
+                DoorCapable22.GetComponent<MeshRenderer>().enabled = true;
+                DoorCapable23.GetComponent<MeshRenderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
                 {
-                    DoorPicInShoot.SetActive(true);
-                    DoorPicInProjection.SetActive(true);
+                    DoorPic.SetActive(true);
                 }
             }
             else
             {
-                DoorCapable2.SetActive(false);
+                DoorCapable21.GetComponent<MeshRenderer>().enabled = false;
+                DoorCapable22.GetComponent<MeshRenderer>().enabled = false;
+                DoorCapable23.GetComponent<MeshRenderer>().enabled = false;
             }
             //cliff
             if (hit.collider.gameObject == Block1)
@@ -82,8 +98,7 @@ public class CaptureThings : MonoBehaviour
                 BlockChecked1.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
-                    BridgePicInShoot.SetActive(true);
-                    BridgePicInProjection.SetActive(true);
+                    BridgePic.SetActive(true);
                 }
             }
             else
@@ -95,8 +110,7 @@ public class CaptureThings : MonoBehaviour
                 BlockChecked2.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
-                    BridgePicInShoot.SetActive(true);
-                    BridgePicInProjection.SetActive(true);
+                    BridgePic.SetActive(true);
                 }
             }
             else
@@ -108,8 +122,7 @@ public class CaptureThings : MonoBehaviour
                 BlockChecked3.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
-                    BridgePicInShoot.SetActive(true);
-                    BridgePicInProjection.SetActive(true);
+                    BridgePic.SetActive(true);
                 }
             }
             else
@@ -122,8 +135,7 @@ public class CaptureThings : MonoBehaviour
                 CubeChecked1.SetActive(true);
                 if(Input.GetMouseButtonDown(0))
                 {
-                    CubePicInShoot.SetActive(true);
-                    CubePicInProjection.SetActive(true);
+                    CubePic.SetActive(true);
                 }
             }
             else
@@ -135,8 +147,7 @@ public class CaptureThings : MonoBehaviour
                 CubeChecked2.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
-                    CubePicInShoot.SetActive(true);
-                    CubePicInProjection.SetActive(true);
+                    CubePic.SetActive(true);
                 }
             }
             else
@@ -148,8 +159,7 @@ public class CaptureThings : MonoBehaviour
                 CubeChecked3.SetActive(true);
                 if (Input.GetMouseButtonDown(0) && CubeOK1.activeSelf == true)
                 {
-                    CubePicInShoot.SetActive(true);
-                    CubePicInProjection.SetActive(true);
+                    CubePic.SetActive(true);
                 }
             }
             else
@@ -161,8 +171,7 @@ public class CaptureThings : MonoBehaviour
                 CubeChecked4.SetActive(true);
                 if (Input.GetMouseButtonDown(0) && CubeOK2.activeSelf == true)
                 {
-                    CubePicInShoot.SetActive(true);
-                    CubePicInProjection.SetActive(true);
+                    CubePic.SetActive(true);
                 }
             }
             else
@@ -174,8 +183,7 @@ public class CaptureThings : MonoBehaviour
                 CubeChecked5.SetActive(true);
                 if (Input.GetMouseButtonDown(0) && CubeOK3.activeSelf == true)
                 {
-                    CubePicInShoot.SetActive(true);
-                    CubePicInProjection.SetActive(true);
+                    CubePic.SetActive(true);
                 }
             }
             else
@@ -185,8 +193,15 @@ public class CaptureThings : MonoBehaviour
         }
         else
         {
-            DoorCapable.SetActive(false);
-            DoorCapable2.SetActive(false);
+            DoorCapable11.GetComponent<MeshRenderer>().enabled = false;
+            DoorCapable12.GetComponent<MeshRenderer>().enabled = false;
+            DoorCapable13.GetComponent<MeshRenderer>().enabled = false;
+            DoorCapable14.GetComponent<MeshRenderer>().enabled = false;
+            DoorCapable15.GetComponent<MeshRenderer>().enabled = false;
+            DoorCapable16.GetComponent<MeshRenderer>().enabled = false;
+            DoorCapable21.GetComponent<MeshRenderer>().enabled = false;
+            DoorCapable22.GetComponent<MeshRenderer>().enabled = false;
+            DoorCapable23.GetComponent<MeshRenderer>().enabled = false;
             BlockChecked1.SetActive(false);
             BlockChecked2.SetActive(false);
             BlockChecked3.SetActive(false);
@@ -200,8 +215,15 @@ public class CaptureThings : MonoBehaviour
 
     private void OnDisable() 
     {
-        DoorCapable.SetActive(false);
-        DoorCapable2.SetActive(false);
+        DoorCapable11.GetComponent<MeshRenderer>().enabled = false;
+        DoorCapable12.GetComponent<MeshRenderer>().enabled = false;
+        DoorCapable13.GetComponent<MeshRenderer>().enabled = false;
+        DoorCapable14.GetComponent<MeshRenderer>().enabled = false;
+        DoorCapable15.GetComponent<MeshRenderer>().enabled = false;
+        DoorCapable16.GetComponent<MeshRenderer>().enabled = false;
+        DoorCapable21.GetComponent<MeshRenderer>().enabled = false;
+        DoorCapable22.GetComponent<MeshRenderer>().enabled = false;
+        DoorCapable23.GetComponent<MeshRenderer>().enabled = false;
         BlockChecked1.SetActive(false);
         BlockChecked2.SetActive(false);
         BlockChecked3.SetActive(false);
