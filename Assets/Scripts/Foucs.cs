@@ -4,95 +4,36 @@ using UnityEngine;
 
 public class Foucs : MonoBehaviour
 {
-    GameObject CamForPlayer;
-    GameObject MainCam;
-    GameObject Player;
-    GameObject Canvas;
-    GameObject CamUI;
-    GameObject Cam;
-    GameObject Project;
-    GameObject Shoot;
-    GameObject Video;
+    [SerializeField] GameObject testPlayer;
+    [SerializeField] GameObject CamforPlayer;
+    [SerializeField] GameObject qL;
+    [SerializeField] GameObject rL;
+    [SerializeField] GameObject mouseL;
+    [SerializeField] GameObject mouseR;
+    [SerializeField] GameObject Video;
+    [SerializeField] GameObject UI;
+    [SerializeField] GameObject Catch;
+    [SerializeField] GameObject Project;
+    [SerializeField] GameObject PHO;
+    [SerializeField] GameObject REC;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Player = GameObject.Find("Player");
-        MainCam = Player.transform.GetChild(0).gameObject;
-        CamForPlayer = MainCam.transform.GetChild(0).gameObject;
-        Canvas = GameObject.Find("Canvas");
-        CamUI = Canvas.transform.GetChild(0).gameObject;
-        Cam = CamUI.transform.GetChild(3).gameObject;
-        Project = CamUI.transform.GetChild(1).gameObject;
-        Shoot = CamUI.transform.GetChild(0).gameObject;
-        Video = CamUI.transform.GetChild(2).gameObject;
-    }
-
-    // Update is called once per frame
-    [System.Obsolete]
-    void FixedUpdate()
+    void update()
     {
         if(Input.GetMouseButtonDown(1))
         {
-            if(CamForPlayer.gameObject.activeSelf == true)
-            { 
-                CamForPlayer.gameObject.SetActive(false);
-                Cam.gameObject.SetActive(true);
-                Shoot.gameObject.SetActive(true);
-                Player.GetComponent<CaptureThings>().enabled = true;
-            }
-            else
+            if(CamforPlayer.activeSelf == true)
             {
-                CamForPlayer.gameObject.SetActive(true);
-                Cam.gameObject.SetActive(false);
-                Shoot.gameObject.SetActive(false);
-                Project.gameObject.SetActive(false);
-                Video.gameObject.SetActive(false);
-                Player.GetComponent<CaptureThings>().enabled = false;
-                Player.GetComponent<PlaceThings>().enabled = false;
-                Player.GetComponent<PlaceBridge>().enabled = false;
-                Player.GetComponent<PlaceBox>().enabled = false;
+                CamforPlayer.SetActive(false);
+                UI.SetActive(true);
+                testPlayer.GetComponent<CaptureThings>().enabled = true;
+            }
+            else if(CamforPlayer.activeSelf == false)
+            {
+                CamforPlayer.SetActive(true);
+                UI.SetActive(false);
+                testPlayer.GetComponent<CaptureThings>().enabled = false;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.R) && Cam.gameObject.activeSelf == true)
-        {
-            if(Shoot.gameObject.activeSelf == true)
-            {
-                Shoot.gameObject.SetActive(false);
-                Project.gameObject.SetActive(true);
-                Player.GetComponent<CaptureThings>().enabled = false;
-                Player.GetComponent<PlaceThings>().enabled = true;
-                Player.GetComponent<PlaceBridge>().enabled = true;
-                Player.GetComponent<PlaceBox>().enabled = true;
-            }
-            else
-            {
-                Shoot.gameObject.SetActive(true);
-                Project.gameObject.SetActive(false);
-                Player.GetComponent<CaptureThings>().enabled = true;
-                Player.GetComponent<PlaceThings>().enabled = false;
-                Player.GetComponent<PlaceBridge>().enabled = false;
-                Player.GetComponent<PlaceBox>().enabled = false;
-            }
-        }
-
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            if(Shoot.gameObject.activeSelf == true)
-            {
-                if (Video.gameObject.activeSelf == false)
-                {
-                    Video.gameObject.SetActive(true);
-                }
-                else
-                {
-                    Video.gameObject.SetActive(false);
-                }
-            }
-
-        }
-
-
     }
+
 }
