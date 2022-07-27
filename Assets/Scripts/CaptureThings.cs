@@ -7,6 +7,7 @@ public class CaptureThings : MonoBehaviour
     public GameObject mainCam;
 
     RaycastHit hit;
+    [SerializeField] GameObject DoorOpen1;
     public GameObject DoorOpen2;
     public GameObject DoorOpen3;
     public GameObject DoorPic;
@@ -65,6 +66,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     DoorPic.SetActive(true);
+                    BridgePic.SetActive(false);
+                    CubePic.SetActive(false);
                 }
             }
             else
@@ -76,7 +79,7 @@ public class CaptureThings : MonoBehaviour
                 DoorCapable15.GetComponent<MeshRenderer>().enabled = false;
                 DoorCapable16.GetComponent<MeshRenderer>().enabled = false;
             }
-            if (hit.collider.gameObject == DoorOpen3)
+            if (hit.collider.gameObject == DoorOpen1)
             {
                 DoorCapable21.GetComponent<MeshRenderer>().enabled = true;
                 DoorCapable22.GetComponent<MeshRenderer>().enabled = true;
@@ -84,6 +87,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     DoorPic.SetActive(true);
+                    BridgePic.SetActive(false);
+                    CubePic.SetActive(false);
                 }
             }
             else
@@ -99,6 +104,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     BridgePic.SetActive(true);
+                    DoorPic.SetActive(false);
+                    CubePic.SetActive(false);
                 }
             }
             else
@@ -111,6 +118,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     BridgePic.SetActive(true);
+                    DoorPic.SetActive(false);
+                    CubePic.SetActive(false);
                 }
             }
             else
@@ -123,6 +132,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     BridgePic.SetActive(true);
+                    DoorPic.SetActive(false);
+                    CubePic.SetActive(false);
                 }
             }
             else
@@ -136,6 +147,8 @@ public class CaptureThings : MonoBehaviour
                 if(Input.GetMouseButtonDown(0))
                 {
                     CubePic.SetActive(true);
+                    DoorPic.SetActive(false);
+                    BridgePic.SetActive(false);
                 }
             }
             else
@@ -148,6 +161,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     CubePic.SetActive(true);
+                    DoorPic.SetActive(false);
+                    BridgePic.SetActive(false);
                 }
             }
             else
@@ -160,6 +175,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0) && CubeOK1.activeSelf == true)
                 {
                     CubePic.SetActive(true);
+                    DoorPic.SetActive(false);
+                    BridgePic.SetActive(false);
                 }
             }
             else
@@ -172,6 +189,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0) && CubeOK2.activeSelf == true)
                 {
                     CubePic.SetActive(true);
+                    DoorPic.SetActive(false);
+                    BridgePic.SetActive(false);
                 }
             }
             else
@@ -184,6 +203,8 @@ public class CaptureThings : MonoBehaviour
                 if (Input.GetMouseButtonDown(0) && CubeOK3.activeSelf == true)
                 {
                     CubePic.SetActive(true);
+                    DoorPic.SetActive(false);
+                    BridgePic.SetActive(false);
                 }
             }
             else

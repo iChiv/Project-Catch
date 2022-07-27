@@ -12,13 +12,14 @@ public class PlaceDoors : MonoBehaviour
     GameObject DoorClose1;
     GameObject Projection1;
     GameObject Projection2;
-    public GameObject DoorPic;
-    public GameObject DoorOpen2;
-    public GameObject DoorOpen3;
+    [SerializeField] GameObject DoorPic;
+    [SerializeField] GameObject DoorOpen1;
+    [SerializeField] GameObject DoorOpen2;
+    [SerializeField] GameObject DoorOpen3;
 
-    public GameObject DoorClose3;
-    public GameObject Projection3;
-    public GameObject GuideUIwasd;
+    [SerializeField] GameObject DoorClose3;
+    [SerializeField] GameObject Projection3;
+    [SerializeField] GameObject GuideUIwasd;
 
 
     // Start is called before the first frame update
@@ -61,6 +62,7 @@ public class PlaceDoors : MonoBehaviour
                     DoorClose1.gameObject.SetActive(false);
                     Projection1.gameObject.SetActive(false);
                     DoorPic.gameObject.SetActive(false);
+                    DoorOpen1 .GetComponent<BoxCollider>().enabled = true;
                 }
             }
             else

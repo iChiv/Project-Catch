@@ -19,9 +19,23 @@ public class PlaceBox : MonoBehaviour
     public GameObject cubeOK2;
     public GameObject cubeOK3;
 
+    [SerializeField] GameObject plate1;
+    [SerializeField] GameObject plate2;
+
     public GameObject CubePic;
     void Update()
     {
+        if(CubePic.activeSelf == true)
+        {
+            plate1.GetComponent<MeshRenderer>().enabled = true;
+            plate2.GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            plate1.GetComponent<MeshRenderer>().enabled = false;
+            plate2.GetComponent<MeshRenderer>().enabled = false;
+        }
+
         if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit) && CubePic.activeSelf == true)
         {
             if(hit.collider.gameObject == cubeCheck1)
