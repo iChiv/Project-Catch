@@ -40,7 +40,7 @@ public class Waterfall : MonoBehaviour
             indicator3.SetActive(true);
             indicatorO3.SetActive(false);
         }
-        if (indicator1.activeSelf == true && indicator2.activeSelf == true && indicator3)
+        if (indicator1.activeSelf == true && indicator2.activeSelf == true)
         {
             if( indicator3.activeSelf == true )
             {

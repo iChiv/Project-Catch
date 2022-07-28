@@ -7,28 +7,47 @@ public class PlaceBridge : MonoBehaviour
 {
     public GameObject mainCam;
     RaycastHit hit;
+    [SerializeField] GameObject cliff1;
+    [SerializeField] GameObject cliff2;
+    [SerializeField] GameObject cliff3;
+    [SerializeField] GameObject cliff4;
+    [SerializeField] GameObject cliff5;
+    [SerializeField] GameObject cliff6;
     public GameObject bridgeReady;
     public GameObject bridgeOK;
     public GameObject bridgeCheck;
-    public GameObject BridgePicInProject;
-    public GameObject BridgePicInShoot;
-    
+    public GameObject BridgePic;
+
     //public GameObject BridgePicInProject;
 
     // Update is called once per frame
     void Update()
     {
-        if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 50) && BridgePicInProject.activeSelf ==true)
+        if(BridgePic.activeSelf == true)
+        {
+            cliff1.GetComponent<MeshRenderer>().enabled = true;
+            cliff2.GetComponent<MeshRenderer>().enabled = true;
+            cliff3.GetComponent<MeshRenderer>().enabled = true;
+            cliff4.GetComponent<MeshRenderer>().enabled = true;
+            cliff5.GetComponent<MeshRenderer>().enabled = true;
+            cliff6.GetComponent<MeshRenderer>().enabled = true;
+        }
+        if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 50) && BridgePic.activeSelf ==true)
         {
             if(hit.collider.tag == "AbleToPlace" && hit.collider.name == "BridgeBrick")
             {
                 bridgeReady.SetActive(true);
-                if(Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0))
                 {
                     bridgeOK.SetActive(true);
                     bridgeReady.SetActive(false);
-                    BridgePicInProject.gameObject.SetActive(false);
-                    BridgePicInShoot.gameObject.SetActive(false);
+                    BridgePic.gameObject.SetActive(false);
+                    cliff1.GetComponent<MeshRenderer>().enabled = false;
+                    cliff2.GetComponent<MeshRenderer>().enabled = false;
+                    cliff3.GetComponent<MeshRenderer>().enabled = false;
+                    cliff4.GetComponent<MeshRenderer>().enabled = false;
+                    cliff5.GetComponent<MeshRenderer>().enabled = false;
+                    cliff6.GetComponent<MeshRenderer>().enabled = false;
                 }
             }
             else
@@ -36,7 +55,16 @@ public class PlaceBridge : MonoBehaviour
                 bridgeReady.SetActive(false);
             }
 
-        }
-        
+        }      
+    }
+
+    private void OnDisable()
+    {
+        cliff1.GetComponent<MeshRenderer>().enabled = false;
+        cliff2.GetComponent<MeshRenderer>().enabled = false;
+        cliff3.GetComponent<MeshRenderer>().enabled = false;
+        cliff4.GetComponent<MeshRenderer>().enabled = false;
+        cliff5.GetComponent<MeshRenderer>().enabled = false;
+        cliff6.GetComponent<MeshRenderer>().enabled = false;
     }
 }

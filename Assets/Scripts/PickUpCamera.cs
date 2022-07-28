@@ -34,7 +34,7 @@ public class PickUpCamera : MonoBehaviour
                     hit.collider.gameObject.SetActive(false);
                     CamForPlayer.gameObject.SetActive(true);
                     Check.gameObject.SetActive(false);
-                    Player.GetComponent<Foucs>().enabled = true;
+                    Player.GetComponent<CamUI>().enabled = true;
                 }
             }
        

@@ -32,10 +32,10 @@ public class Foucs : MonoBehaviour
     [System.Obsolete]
     void FixedUpdate()
     {
-        if(Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
-            if(CamForPlayer.gameObject.activeSelf == true)
-            { 
+            if (CamForPlayer.gameObject.activeSelf == true)
+            {
                 CamForPlayer.gameObject.SetActive(false);
                 Cam.gameObject.SetActive(true);
                 Shoot.gameObject.SetActive(true);
@@ -49,7 +49,7 @@ public class Foucs : MonoBehaviour
                 Project.gameObject.SetActive(false);
                 Video.gameObject.SetActive(false);
                 Player.GetComponent<CaptureThings>().enabled = false;
-                Player.GetComponent<PlaceThings>().enabled = false;
+                Player.GetComponent<PlaceDoors>().enabled = false;
                 Player.GetComponent<PlaceBridge>().enabled = false;
                 Player.GetComponent<PlaceBox>().enabled = false;
             }
@@ -57,12 +57,12 @@ public class Foucs : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && Cam.gameObject.activeSelf == true)
         {
-            if(Shoot.gameObject.activeSelf == true)
+            if (Shoot.gameObject.activeSelf == true)
             {
                 Shoot.gameObject.SetActive(false);
                 Project.gameObject.SetActive(true);
                 Player.GetComponent<CaptureThings>().enabled = false;
-                Player.GetComponent<PlaceThings>().enabled = true;
+                Player.GetComponent<PlaceDoors>().enabled = true;
                 Player.GetComponent<PlaceBridge>().enabled = true;
                 Player.GetComponent<PlaceBox>().enabled = true;
             }
@@ -71,15 +71,15 @@ public class Foucs : MonoBehaviour
                 Shoot.gameObject.SetActive(true);
                 Project.gameObject.SetActive(false);
                 Player.GetComponent<CaptureThings>().enabled = true;
-                Player.GetComponent<PlaceThings>().enabled = false;
+                Player.GetComponent<PlaceDoors>().enabled = false;
                 Player.GetComponent<PlaceBridge>().enabled = false;
                 Player.GetComponent<PlaceBox>().enabled = false;
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            if(Shoot.gameObject.activeSelf == true)
+            if (Shoot.gameObject.activeSelf == true)
             {
                 if (Video.gameObject.activeSelf == false)
                 {
