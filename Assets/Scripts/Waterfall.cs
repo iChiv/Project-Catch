@@ -18,9 +18,14 @@ public class Waterfall : MonoBehaviour
 
     public GameObject WaterfallControl;
 
+    public GameObject WaterfallControl2;
+    public GameObject gearWater;
+
     private void Start()
     {
         WaterfallControl.GetComponent<DOTweenAnimation>().DOPause();
+        WaterfallControl2.GetComponent<DOTweenAnimation>().DOPause();
+        gearWater.GetComponent<DOTweenAnimation>().DOPause();
     }
     // Update is called once per frame
     void Update()

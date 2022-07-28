@@ -17,6 +17,10 @@ public class GuideControl : MonoBehaviour
     [SerializeField] GameObject DoorCheck;
     [SerializeField] GameObject DoorPic;
 
+    public GameObject indicator1;
+    public GameObject indicator2;
+    public GameObject indicator3;
+
     public GameObject Video;
     public GameObject PressRight;
     public GameObject PressLeft;
@@ -28,6 +32,7 @@ public class GuideControl : MonoBehaviour
     {
         PressLeft.GetComponent<DOTweenAnimation>().DOPause();
         PressR.GetComponent<DOTweenAnimation>().DOPause();
+        PressQ.GetComponent<DOTweenAnimation>().DOPause();
     }
     // Update is called once per frame
     void Update()
@@ -70,6 +75,19 @@ public class GuideControl : MonoBehaviour
             {
                 PressR.SetActive(false);
                 guide3 = true;
+            }
+        }
+
+        if(!guide4 && indicator3.activeSelf == true)
+        {
+            if (indicator1.activeSelf == true && indicator2.activeSelf == true )
+            {
+                PressQ.GetComponent<DOTweenAnimation>().DOPlay();
+                if(Input.GetKeyDown(KeyCode.Q))
+                {
+                    PressQ.SetActive(false);
+                    guide4 = true;
+                }
             }
         }
 

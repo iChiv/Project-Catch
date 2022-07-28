@@ -23,6 +23,7 @@ public class PlaceBox : MonoBehaviour
     [SerializeField] GameObject plate2;
 
     public GameObject CubePic;
+    public GameObject CubePicPro;
     void Update()
     {
         if(CubePic.activeSelf == true)
@@ -46,6 +47,7 @@ public class PlaceBox : MonoBehaviour
                     cubeOK1.SetActive(true);
                     cubeReady1.SetActive(false);
                     CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
                 }
             }
             else
@@ -61,6 +63,7 @@ public class PlaceBox : MonoBehaviour
                     cubeReady2.SetActive(false);
                     cubeReady2.GetComponent<MeshRenderer>().enabled = false;
                     CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
                 }
             }
             else
@@ -75,6 +78,7 @@ public class PlaceBox : MonoBehaviour
                     cubeOK3.SetActive(true);
                     cubeReady3.SetActive(false);
                     CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
                 }
             }
             else

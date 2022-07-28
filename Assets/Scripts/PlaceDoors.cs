@@ -12,7 +12,10 @@ public class PlaceDoors : MonoBehaviour
     GameObject DoorClose1;
     GameObject Projection1;
     GameObject Projection2;
+
     [SerializeField] GameObject DoorPic;
+    [SerializeField] GameObject DoorPicPro;
+
     [SerializeField] GameObject DoorOpen1;
     [SerializeField] GameObject DoorOpen2;
     [SerializeField] GameObject DoorOpen3;
@@ -47,6 +50,7 @@ public class PlaceDoors : MonoBehaviour
                     DoorClose2.gameObject.SetActive(false);
                     Projection2.gameObject.SetActive(false);
                     DoorPic.gameObject.SetActive(false);
+                    DoorPicPro.SetActive(false);
                     DoorOpen2.GetComponent<BoxCollider>().enabled = true;
                 }
             }
@@ -62,6 +66,7 @@ public class PlaceDoors : MonoBehaviour
                     DoorClose1.gameObject.SetActive(false);
                     Projection1.gameObject.SetActive(false);
                     DoorPic.gameObject.SetActive(false);
+                    DoorPicPro.SetActive(false);
                     DoorOpen1 .GetComponent<BoxCollider>().enabled = true;
                 }
             }
@@ -77,6 +82,7 @@ public class PlaceDoors : MonoBehaviour
                     DoorClose3.gameObject.SetActive(false);
                     Projection3.gameObject.SetActive(false);
                     DoorPic.gameObject.SetActive(false);
+                    DoorPicPro.SetActive(false);
                     GuideUIwasd.gameObject.SetActive(false);
                     DoorOpen3.GetComponent<BoxCollider>().enabled = true;
                 }
