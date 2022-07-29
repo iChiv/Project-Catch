@@ -21,6 +21,8 @@ public class GuideControl : MonoBehaviour
     public GameObject indicator2;
     public GameObject indicator3;
 
+    [SerializeField] GameObject catchOn;
+
     public GameObject Video;
     public GameObject PressRight;
     public GameObject PressLeft;
@@ -82,7 +84,10 @@ public class GuideControl : MonoBehaviour
         {
             if (indicator1.activeSelf == true && indicator2.activeSelf == true )
             {
-                PressQ.GetComponent<DOTweenAnimation>().DOPlay();
+                if(catchOn.activeSelf==false)
+                {
+                    PressQ.GetComponent<DOTweenAnimation>().DOPlay();
+                }
                 if(Input.GetKeyDown(KeyCode.Q))
                 {
                     PressQ.SetActive(false);

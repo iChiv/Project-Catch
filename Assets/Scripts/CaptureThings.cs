@@ -72,6 +72,11 @@ public class CaptureThings : MonoBehaviour
 
     [SerializeField] GameObject Gear_sPic;
     [SerializeField] GameObject Gear_sPicPro;
+
+    //SUN
+    [SerializeField] GameObject Sun;
+    [SerializeField] GameObject sunPic;
+    [SerializeField] GameObject sunPicPro;
     // Update is called once per frame
     void Update()
     {
@@ -97,6 +102,10 @@ public class CaptureThings : MonoBehaviour
                     CubePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -125,6 +134,10 @@ public class CaptureThings : MonoBehaviour
                     CubePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -148,6 +161,10 @@ public class CaptureThings : MonoBehaviour
                     CubePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -167,6 +184,10 @@ public class CaptureThings : MonoBehaviour
                     CubePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -186,6 +207,10 @@ public class CaptureThings : MonoBehaviour
                     CubePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -206,6 +231,10 @@ public class CaptureThings : MonoBehaviour
                     BridgePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -225,6 +254,10 @@ public class CaptureThings : MonoBehaviour
                     BridgePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -244,6 +277,10 @@ public class CaptureThings : MonoBehaviour
                     BridgePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -263,6 +300,10 @@ public class CaptureThings : MonoBehaviour
                     BridgePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -282,6 +323,10 @@ public class CaptureThings : MonoBehaviour
                     BridgePicPro.SetActive(false);
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -318,6 +363,10 @@ public class CaptureThings : MonoBehaviour
                     DoorPicPro.SetActive(false);
                     BridgePic.SetActive(false);
                     BridgePicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -334,6 +383,7 @@ public class CaptureThings : MonoBehaviour
                     Gear_sCheck.GetComponent <MeshRenderer>().enabled = false;
                     Gear_sPic.SetActive(true);
                     Gear_sPicPro.SetActive(true);
+
                     WaterfallPic.SetActive(false);
                     WaterfallPicPro.SetActive(false);
                     CubePic.SetActive(false);
@@ -342,11 +392,35 @@ public class CaptureThings : MonoBehaviour
                     DoorPicPro.SetActive(false);
                     BridgePic.SetActive(false);
                     BridgePicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
             {
                 Gear_sCheck.GetComponent<MeshRenderer>().enabled = false;
+            }
+
+            //sun
+            if(hit.collider.gameObject == Sun)
+            {
+                if(Input.GetMouseButtonDown(0))
+                {
+                    sunPic.SetActive(true);
+                    sunPicPro.SetActive(true);
+
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+
+                }
             }
         }
         else
@@ -360,6 +434,7 @@ public class CaptureThings : MonoBehaviour
             DoorCapable21.GetComponent<MeshRenderer>().enabled = false;
             DoorCapable22.GetComponent<MeshRenderer>().enabled = false;
             DoorCapable23.GetComponent<MeshRenderer>().enabled = false;
+            Gear_sCheck.GetComponent<MeshRenderer>().enabled = false;
             DoorBox1.SetActive(true);
             DoorBox2.SetActive(false);
             BlockChecked1.SetActive(false);
@@ -393,6 +468,7 @@ public class CaptureThings : MonoBehaviour
         BlockChecked3.SetActive(false);
         WaterfallCheck1.GetComponent<MeshRenderer>().enabled = false;
         WaterfallCheck2.GetComponent<MeshRenderer>().enabled = false;
+        Gear_sCheck.GetComponent<MeshRenderer>().enabled = false;
 
     }
 }
