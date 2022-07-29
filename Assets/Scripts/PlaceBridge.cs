@@ -17,6 +17,7 @@ public class PlaceBridge : MonoBehaviour
     public GameObject bridgeOK;
     public GameObject bridgeCheck;
     public GameObject BridgePic;
+    public GameObject BridgePicPro;
 
     //public GameObject BridgePicInProject;
 
@@ -42,6 +43,7 @@ public class PlaceBridge : MonoBehaviour
                     bridgeOK.SetActive(true);
                     bridgeReady.SetActive(false);
                     BridgePic.gameObject.SetActive(false);
+                    BridgePicPro.SetActive(false);
                     cliff1.GetComponent<MeshRenderer>().enabled = false;
                     cliff2.GetComponent<MeshRenderer>().enabled = false;
                     cliff3.GetComponent<MeshRenderer>().enabled = false;

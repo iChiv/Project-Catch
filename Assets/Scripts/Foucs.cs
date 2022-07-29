@@ -52,6 +52,7 @@ public class Foucs : MonoBehaviour
                 Player.GetComponent<PlaceDoors>().enabled = false;
                 Player.GetComponent<PlaceBridge>().enabled = false;
                 Player.GetComponent<PlaceBox>().enabled = false;
+                Player.GetComponent<PlaceWaterfall>().enabled = false;
             }
         }
 
@@ -65,6 +66,7 @@ public class Foucs : MonoBehaviour
                 Player.GetComponent<PlaceDoors>().enabled = true;
                 Player.GetComponent<PlaceBridge>().enabled = true;
                 Player.GetComponent<PlaceBox>().enabled = true;
+                Player.GetComponent<PlaceWaterfall>().enabled = true;
             }
             else
             {
@@ -74,6 +76,7 @@ public class Foucs : MonoBehaviour
                 Player.GetComponent<PlaceDoors>().enabled = false;
                 Player.GetComponent<PlaceBridge>().enabled = false;
                 Player.GetComponent<PlaceBox>().enabled = false;
+                Player.GetComponent<PlaceWaterfall>().enabled = false;
             }
         }
 

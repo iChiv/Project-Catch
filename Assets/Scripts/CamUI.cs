@@ -16,6 +16,7 @@ public class CamUI : MonoBehaviour
     [SerializeField] GameObject Project;
     [SerializeField] GameObject PHO;
     [SerializeField] GameObject REC;
+    [SerializeField] GameObject ProjObj;
 
     void Update()
     {
@@ -29,6 +30,7 @@ public class CamUI : MonoBehaviour
                 Catch.SetActive(false);
                 PHO.SetActive(false);
                 Project.SetActive(true);
+                ProjObj.SetActive(false);
                 testPlayer.GetComponent<CaptureThings>().enabled = true;
             }
             else if(CamforPlayer.activeSelf == false)
@@ -39,6 +41,8 @@ public class CamUI : MonoBehaviour
                 testPlayer.GetComponent<PlaceDoors>().enabled = false;
                 testPlayer.GetComponent<PlaceBridge>().enabled = false;
                 testPlayer.GetComponent<PlaceBox>().enabled = false;
+                testPlayer.GetComponent<PlaceWaterfall>().enabled = false;
+                testPlayer.GetComponent<PlaceGears>().enabled = false;
             }
         }
 
@@ -50,10 +54,14 @@ public class CamUI : MonoBehaviour
                 PHO.SetActive(true);
                 REC.SetActive(true);
                 Project.SetActive(false);
+                Video.SetActive(false);
+                ProjObj.SetActive(true);
                 testPlayer.GetComponent<CaptureThings>().enabled = false;
                 testPlayer.GetComponent<PlaceDoors>().enabled = true;
                 testPlayer.GetComponent<PlaceBridge>().enabled = true;
                 testPlayer.GetComponent<PlaceBox>().enabled = true;
+                testPlayer.GetComponent<PlaceWaterfall>().enabled = true;
+                testPlayer.GetComponent<PlaceGears>().enabled = true;
             }
             else
             {
@@ -61,10 +69,13 @@ public class CamUI : MonoBehaviour
                 PHO.SetActive(false);
                 REC.SetActive(true);
                 Project.SetActive(true);
+                ProjObj.SetActive(false);
                 testPlayer.GetComponent<CaptureThings>().enabled = true;
                 testPlayer.GetComponent<PlaceDoors>().enabled = false;
                 testPlayer.GetComponent<PlaceBridge>().enabled = false;
                 testPlayer.GetComponent<PlaceBox>().enabled = false;
+                testPlayer.GetComponent<PlaceWaterfall>().enabled = false;
+                testPlayer.GetComponent<PlaceGears>().enabled = false;
             }
         }
 
