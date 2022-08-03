@@ -55,7 +55,14 @@ public class GearAndSun : MonoBehaviour
 
         if(gear1Dxxx.activeSelf == true)
         {
-            Invoke("destoryXXX", 3f);
+            gear1Dxxx.GetComponent<DOTweenPath>().DORestart(true);
+            Invoke("destoryXXX", 5f);
+        }
+
+        if(gear3S.activeSelf == true)
+        {
+            gear3S.GetComponent<DOTweenPath>().DORestart(true);
+            Invoke("destory3S", 5f);
         }
 
         if(gear3D.activeSelf == true)
@@ -106,5 +113,10 @@ public class GearAndSun : MonoBehaviour
     private void destoryXXX()
     {
         gear1Dxxx.SetActive(false);
+    }
+
+    private void destory3S()
+    {
+        gear3S.SetActive(false);
     }
 }
