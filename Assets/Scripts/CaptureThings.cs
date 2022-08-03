@@ -73,6 +73,23 @@ public class CaptureThings : MonoBehaviour
 
     [SerializeField] GameObject Gear_sPic;
     [SerializeField] GameObject Gear_sPicPro;
+    [SerializeField] GameObject Gear_dPic;
+    [SerializeField] GameObject Gear_dPicPro;
+
+    [SerializeField] GameObject gearActive1;
+    [SerializeField] GameObject gearActive2;
+    [SerializeField] GameObject gearActive3;
+    [SerializeField] GameObject gearCheck1;
+    [SerializeField] GameObject gearCheck1D;
+    [SerializeField] GameObject gearCheck2;
+    [SerializeField] GameObject gearCheck2D;
+    [SerializeField] GameObject gearCheck3;
+    [SerializeField] GameObject gearCheck3D;
+    [SerializeField] GameObject Gear_S1;
+    [SerializeField] GameObject Gear_D1;
+    [SerializeField] GameObject Gear_D2;
+    [SerializeField] GameObject Gear_S3;
+    [SerializeField] GameObject Gear_D3;
 
     //SUN
     [SerializeField] GameObject Sun;
@@ -366,6 +383,17 @@ public class CaptureThings : MonoBehaviour
                 {
                     WaterfallCheck1.GetComponent<MeshRenderer>().enabled = false;
                     WaterfallPic.SetActive(true);
+                    WaterfallPicPro.SetActive(true);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
                 }
             }
             else
@@ -425,8 +453,182 @@ public class CaptureThings : MonoBehaviour
                 Gear_sCheck.GetComponent<MeshRenderer>().enabled = false;
             }
 
+            if (hit.collider.gameObject == gearActive1 && Gear_S1.activeSelf == true)
+            {
+                gearCheck1.GetComponent<MeshRenderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    gearCheck1.GetComponent<MeshRenderer>().enabled = false;
+                    Gear_sPic.SetActive(true);
+                    Gear_sPicPro.SetActive(true);
+
+                    Gear_dPic.SetActive(false);
+                    Gear_dPicPro.SetActive(false);
+
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
+                }
+            }
+            else
+            {
+                gearCheck1.GetComponent<MeshRenderer>().enabled = false;
+            }
+
+            //if (hit.collider.gameObject == gearActive1 && REC.activeSelf == true && Gear_D1.activeSelf == true)
+            //{
+            //    gearCheck1D.GetComponent<MeshRenderer>().enabled = true;
+            //    if (Input.GetMouseButtonDown(0))
+            //    {
+            //        gearCheck1D.GetComponent<MeshRenderer>().enabled = false;
+            //        Gear_dPic.SetActive(true);
+            //        Gear_dPicPro.SetActive(true);
+
+            //        Gear_sPic.SetActive(false);
+            //        Gear_sPicPro.SetActive(false);
+
+            //        WaterfallPic.SetActive(false);
+            //        WaterfallPicPro.SetActive(false);
+            //        CubePic.SetActive(false);
+            //        CubePicPro.SetActive(false);
+            //        DoorPic.SetActive(false);
+            //        DoorPicPro.SetActive(false);
+            //        BridgePic.SetActive(false);
+            //        BridgePicPro.SetActive(false);
+            //        sunPic.SetActive(false);
+            //        sunPicPro.SetActive(false);
+            //    }
+            //}
+            //else
+            //{
+            //    gearCheck1D.GetComponent<MeshRenderer>().enabled = false;
+            //}
+
+            if (hit.collider.gameObject == gearActive2 && Gear_D2.activeSelf == true)
+            {
+                gearCheck2.GetComponent<MeshRenderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    gearCheck2.GetComponent<MeshRenderer>().enabled = false;
+                    Gear_sPic.SetActive(true);
+                    Gear_sPicPro.SetActive(true);
+
+                    Gear_dPic.SetActive(false);
+                    Gear_dPicPro.SetActive(false);
+
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
+                }
+            }
+            else
+            {
+                gearCheck2.GetComponent<MeshRenderer>().enabled = false;
+            }
+
+            if (hit.collider.gameObject == gearActive2 && REC.activeSelf == true && Gear_D2.activeSelf == true)
+            {
+                gearCheck2D.GetComponent<MeshRenderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    gearCheck2D.GetComponent<MeshRenderer>().enabled = false;
+                    Gear_dPic.SetActive(true);
+                    Gear_dPicPro.SetActive(true);
+
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
+                }
+            }
+            else
+            {
+                gearCheck2D.GetComponent<MeshRenderer>().enabled = false;
+            }
+
+            if (hit.collider.gameObject == gearActive3 && Gear_S3.activeSelf == true)
+            {
+                gearCheck3.GetComponent<MeshRenderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    gearCheck3.GetComponent<MeshRenderer>().enabled = false;
+                    Gear_sPic.SetActive(true);
+                    Gear_sPicPro.SetActive(true);
+
+                    Gear_dPic.SetActive(false);
+                    Gear_dPicPro.SetActive(false);
+
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
+                }
+            }
+            else
+            {
+                gearCheck3.GetComponent<MeshRenderer>().enabled = false;
+            }
+
+            if (hit.collider.gameObject == gearActive3 && REC.activeSelf == true && Gear_D3.activeSelf == true)
+            {
+                gearCheck3D.GetComponent<MeshRenderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    gearCheck3D.GetComponent<MeshRenderer>().enabled = false;
+                    Gear_dPic.SetActive(true);
+                    Gear_dPicPro.SetActive(true);
+
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
+                }
+            }
+            else
+            {
+                gearCheck3D.GetComponent<MeshRenderer>().enabled = false;
+            }
+
             //sun
-            if(hit.collider.gameObject == Sun)
+            if (hit.collider.gameObject == Sun)
             {
                 if(Input.GetMouseButtonDown(0))
                 {
@@ -472,6 +674,13 @@ public class CaptureThings : MonoBehaviour
             CubeChecked5.SetActive(false);
             WaterfallCheck1.GetComponent<MeshRenderer>().enabled = false;
             WaterfallCheck2.GetComponent<MeshRenderer>().enabled = false;
+
+            gearCheck1.GetComponent<MeshRenderer>().enabled = false;
+            gearCheck2.GetComponent<MeshRenderer>().enabled = false;
+            gearCheck3.GetComponent<MeshRenderer>().enabled = false;
+            gearCheck1D.GetComponent<MeshRenderer>().enabled = false;
+            gearCheck2D.GetComponent<MeshRenderer>().enabled = false;
+            gearCheck3D.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 
@@ -495,6 +704,13 @@ public class CaptureThings : MonoBehaviour
         WaterfallCheck1.GetComponent<MeshRenderer>().enabled = false;
         WaterfallCheck2.GetComponent<MeshRenderer>().enabled = false;
         Gear_sCheck.GetComponent<MeshRenderer>().enabled = false;
+
+        gearCheck1.GetComponent<MeshRenderer>().enabled = false;
+        gearCheck2.GetComponent<MeshRenderer>().enabled = false;
+        gearCheck3.GetComponent<MeshRenderer>().enabled = false;
+        gearCheck1D.GetComponent<MeshRenderer>().enabled = false;
+        gearCheck2D.GetComponent<MeshRenderer>().enabled = false;
+        gearCheck3D.GetComponent<MeshRenderer>().enabled = false;
 
     }
 }

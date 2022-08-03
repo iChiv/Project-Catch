@@ -42,6 +42,7 @@ public class CamUI : MonoBehaviour
                 UI.SetActive(true);
                 Catch.SetActive(false);
                 PHO.SetActive(false);
+                REC.SetActive(true);
                 Project.SetActive(true);
                 ProjObj.SetActive(false);
                 testPlayer.GetComponent<CaptureThings>().enabled = true;
@@ -61,6 +62,7 @@ public class CamUI : MonoBehaviour
                 testPlayer.GetComponent<PlaceBox>().enabled = false;
                 testPlayer.GetComponent<PlaceWaterfall>().enabled = false;
                 testPlayer.GetComponent<PlaceGears>().enabled = false;
+                testPlayer.GetComponent<PlaceSunLight>().enabled = false;
             }
         }
 
@@ -83,6 +85,7 @@ public class CamUI : MonoBehaviour
                 testPlayer.GetComponent<PlaceBox>().enabled = true;
                 testPlayer.GetComponent<PlaceWaterfall>().enabled = true;
                 testPlayer.GetComponent<PlaceGears>().enabled = true;
+                testPlayer.GetComponent<PlaceSunLight>().enabled = true;
             }
             else
             {
@@ -100,6 +103,7 @@ public class CamUI : MonoBehaviour
                 testPlayer.GetComponent<PlaceBox>().enabled = false;
                 testPlayer.GetComponent<PlaceWaterfall>().enabled = false;
                 testPlayer.GetComponent<PlaceGears>().enabled = false;
+                testPlayer.GetComponent<PlaceSunLight>().enabled = false;
             }
         }
 

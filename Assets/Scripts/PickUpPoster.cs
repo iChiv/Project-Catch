@@ -6,6 +6,7 @@ public class PickUpPoster : MonoBehaviour
 {
     RaycastHit hit;
     [SerializeField] GameObject mainCam;
+    [SerializeField] GameObject player;
     [SerializeField] GameObject poster;
     [SerializeField] GameObject posterUI;
     int layerMask = 1 << 6;
@@ -24,6 +25,7 @@ public class PickUpPoster : MonoBehaviour
                     {
                         posterUI.SetActive(true);
                         mainCam.GetComponent<CameraLock>().enabled = false;
+                        player.GetComponent<PlayerMover>().enabled = false;
                     }
                 }
             }
@@ -34,6 +36,7 @@ public class PickUpPoster : MonoBehaviour
             {
                 posterUI.SetActive(false);
                 mainCam.GetComponent<CameraLock>().enabled = true;
+                player.GetComponent<PlayerMover>().enabled = true;
             }
         }
     }
