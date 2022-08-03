@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CamUI : MonoBehaviour
 {
@@ -17,13 +18,25 @@ public class CamUI : MonoBehaviour
     [SerializeField] GameObject PHO;
     [SerializeField] GameObject REC;
     [SerializeField] GameObject ProjObj;
+    [SerializeField] GameObject Q_all;
+    [SerializeField] GameObject REC_all;
+    [SerializeField] GameObject PHO_all;
 
+    private void Start()
+    {
+        Q_all.GetComponent<DOTweenAnimation>().DOPlay();
+        UI.GetComponent<DOTweenAnimation>().DOPlay();
+    }
     void Update()
     {
         if(Input.GetMouseButtonDown(1))
         {
             if(CamforPlayer.activeSelf == true)
             {
+                UI.GetComponent<DOTweenAnimation>().DORestart();
+                Q_all.GetComponent<DOTweenAnimation>().DORestart();
+                REC_all.GetComponent<DOTweenAnimation>().DORestart();
+                PHO_all.GetComponent<DOTweenAnimation>().DORestart();
                 CamforPlayer.SetActive(false);
                 Video.SetActive(false);
                 UI.SetActive(true);
@@ -35,8 +48,13 @@ public class CamUI : MonoBehaviour
             }
             else if(CamforPlayer.activeSelf == false)
             {
+                //Q_all.GetComponent<DOTweenAnimation>().DORestart();
+                //REC_all.GetComponent<DOTweenAnimation>().DORestart();
+                //PHO_all.GetComponent<DOTweenAnimation>().DORestart();
                 CamforPlayer.SetActive(true);
-                UI.SetActive(false);
+                UI.GetComponent<DOTweenAnimation>().DOPlayBackwards();
+                Invoke("UIoff", 0.6f);
+                //UI.SetActive(false);
                 testPlayer.GetComponent<CaptureThings>().enabled = false;
                 testPlayer.GetComponent<PlaceDoors>().enabled = false;
                 testPlayer.GetComponent<PlaceBridge>().enabled = false;
@@ -50,6 +68,9 @@ public class CamUI : MonoBehaviour
         {
             if(Catch.activeSelf == false)
             {
+                Q_all.GetComponent<DOTweenAnimation>().DOPlayBackwards();
+                REC_all.GetComponent<DOTweenAnimation>().DOPlayBackwards();
+                PHO_all.GetComponent<DOTweenAnimation>().DOPlayBackwards();
                 Catch.SetActive(true);
                 PHO.SetActive(true);
                 REC.SetActive(true);
@@ -65,6 +86,9 @@ public class CamUI : MonoBehaviour
             }
             else
             {
+                Q_all.GetComponent<DOTweenAnimation>().DORestart();
+                REC_all.GetComponent<DOTweenAnimation>().DORestart();
+                PHO_all.GetComponent<DOTweenAnimation>().DORestart();
                 Catch.SetActive(false);
                 PHO.SetActive(false);
                 REC.SetActive(true);
@@ -98,5 +122,11 @@ public class CamUI : MonoBehaviour
             }
         }
     }
+
+    private void UIoff()
+    {
+        UI.SetActive(false);
+    }
+
 
 }

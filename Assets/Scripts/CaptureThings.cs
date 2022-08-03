@@ -22,6 +22,7 @@ public class CaptureThings : MonoBehaviour
     public GameObject DoorCapable16;
     public GameObject DoorBox1;
     public GameObject DoorBox2;
+    public GameObject DoorBox3;
 
     public GameObject DoorCapable21;
     public GameObject DoorCapable22;
@@ -146,6 +147,29 @@ public class CaptureThings : MonoBehaviour
                 DoorCapable21.GetComponent<MeshRenderer>().enabled = false;
                 DoorCapable22.GetComponent<MeshRenderer>().enabled = false;
                 DoorCapable23.GetComponent<MeshRenderer>().enabled = false;
+            }
+            if (hit.collider.gameObject == DoorOpen3)
+            {
+                DoorBox3.SetActive(true);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    DoorPic.SetActive(true);
+                    DoorPicPro.SetActive(true);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
+                }
+            }
+            else
+            {
+                DoorBox3.SetActive(false);
             }
             //cliff
             if (hit.collider.gameObject == Block1)
@@ -435,8 +459,9 @@ public class CaptureThings : MonoBehaviour
             DoorCapable22.GetComponent<MeshRenderer>().enabled = false;
             DoorCapable23.GetComponent<MeshRenderer>().enabled = false;
             Gear_sCheck.GetComponent<MeshRenderer>().enabled = false;
-            DoorBox1.SetActive(true);
+            DoorBox1.SetActive(false);
             DoorBox2.SetActive(false);
+            DoorBox3.SetActive(false);
             BlockChecked1.SetActive(false);
             BlockChecked2.SetActive(false);
             BlockChecked3.SetActive(false);
@@ -461,8 +486,9 @@ public class CaptureThings : MonoBehaviour
         DoorCapable21.GetComponent<MeshRenderer>().enabled = false;
         DoorCapable22.GetComponent<MeshRenderer>().enabled = false;
         DoorCapable23.GetComponent<MeshRenderer>().enabled = false;
-        DoorBox1.SetActive(true);
+        DoorBox1.SetActive(false);
         DoorBox2.SetActive(false);
+        DoorBox3.SetActive(false);
         BlockChecked1.SetActive(false);
         BlockChecked2.SetActive(false);
         BlockChecked3.SetActive(false);
