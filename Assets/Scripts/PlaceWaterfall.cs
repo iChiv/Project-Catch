@@ -46,7 +46,7 @@ public class PlaceWaterfall : MonoBehaviour
 
         if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 50,layerMask) && waterfallPic.activeSelf == true)
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             if (hit.collider.gameObject == waterfallCheck)
             {
                 waterfallReady.GetComponent<MeshRenderer>().enabled = true;
