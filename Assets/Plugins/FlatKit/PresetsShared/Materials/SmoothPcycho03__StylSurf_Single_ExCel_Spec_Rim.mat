@@ -116,8 +116,8 @@ Material:
     - _GradientEnd: 0.55
     - _GradientSize: 5
     - _GradientStart: 1.17
-    - _LightContribution: 0.5
-    - _LightFalloffSize: 0
+    - _LightContribution: 0.042
+    - _LightFalloffSize: 0.321
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
