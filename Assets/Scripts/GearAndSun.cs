@@ -33,6 +33,8 @@ public class GearAndSun : MonoBehaviour
     public GameObject elevatorP;
     public GameObject elevator;
 
+    public GameObject gearSound;
+
     private void Start()
     {
         gear1core.GetComponent<DOTweenAnimation>().DOPause();
@@ -55,13 +57,13 @@ public class GearAndSun : MonoBehaviour
 
         if(gear1Dxxx.activeSelf == true)
         {
-            gear1Dxxx.GetComponent<DOTweenPath>().DORestart(true);
+            gear1Dxxx.GetComponent<DOTweenPath>().DOPlay();
             Invoke("destoryXXX", 5f);
         }
 
         if(gear3S.activeSelf == true)
         {
-            gear3S.GetComponent<DOTweenPath>().DORestart(true);
+            gear3S.GetComponent<DOTweenPath>().DOPlay();
             Invoke("destory3S", 5f);
         }
 
@@ -83,12 +85,13 @@ public class GearAndSun : MonoBehaviour
 
                 indicator_both_01_off.SetActive(false);
                 indicator_both_01_on.SetActive(true);
+                gearSound.SetActive(true);
             }
-            else
-            {
-                Invoke("brokengear", 2f);
-                Invoke("destoryXXX", 5f);
-            }
+            //else
+            //{
+            //    Invoke("brokengear", 2f);
+            //    Invoke("destoryXXX", 5f);
+            //}
         }
 
         if (sunLight.activeSelf == true)

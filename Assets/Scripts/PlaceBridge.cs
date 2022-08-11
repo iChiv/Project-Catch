@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlaceBridge : MonoBehaviour
 {
+    public AudioSource projectSound;
     public GameObject mainCam;
     RaycastHit hit;
     [SerializeField] GameObject cliff1;
@@ -33,6 +34,16 @@ public class PlaceBridge : MonoBehaviour
             cliff5.GetComponent<MeshRenderer>().enabled = true;
             cliff6.GetComponent<MeshRenderer>().enabled = true;
         }
+        else
+        {
+            cliff1.GetComponent<MeshRenderer>().enabled = false;
+            cliff2.GetComponent<MeshRenderer>().enabled = false;
+            cliff3.GetComponent<MeshRenderer>().enabled = false;
+            cliff4.GetComponent<MeshRenderer>().enabled = false;
+            cliff5.GetComponent<MeshRenderer>().enabled = false;
+            cliff6.GetComponent<MeshRenderer>().enabled = false;
+        }
+
         if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 50) && BridgePic.activeSelf ==true)
         {
             if(hit.collider.tag == "AbleToPlace" && hit.collider.name == "BridgeBrick")
@@ -40,6 +51,7 @@ public class PlaceBridge : MonoBehaviour
                 bridgeReady.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
+                    projectSound.Play();
                     bridgeOK.SetActive(true);
                     bridgeReady.SetActive(false);
                     BridgePic.gameObject.SetActive(false);

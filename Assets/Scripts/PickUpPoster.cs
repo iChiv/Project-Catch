@@ -11,6 +11,8 @@ public class PickUpPoster : MonoBehaviour
     [SerializeField] GameObject posterUI;
     int layerMask = 1 << 6;
 
+    public GameObject mc;
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +28,9 @@ public class PickUpPoster : MonoBehaviour
                         posterUI.SetActive(true);
                         mainCam.GetComponent<CameraLock>().enabled = false;
                         player.GetComponent<PlayerMover>().enabled = false;
+                        mc.GetComponent<FrameRateLock>().enabled = false;
+                        Cursor.lockState = CursorLockMode.None;
+                        Cursor.visible = true;
                     }
                 }
             }
@@ -37,6 +42,7 @@ public class PickUpPoster : MonoBehaviour
                 posterUI.SetActive(false);
                 mainCam.GetComponent<CameraLock>().enabled = true;
                 player.GetComponent<PlayerMover>().enabled = true;
+                mc.GetComponent<FrameRateLock>().enabled = true;
             }
         }
     }

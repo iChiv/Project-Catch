@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class GuideControl : MonoBehaviour
 {
-    private bool guide1 = false;
+    //private bool guide1 = false;
     private bool guide2 = false;
     private bool guide3 = false;
     private bool guide4 = false;

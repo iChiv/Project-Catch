@@ -7,6 +7,7 @@ TagManager:
   - camObj
   - AbleToPlace
   - AbleToCapture
+  - coin
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1ae78c61fdb98d04c91af86424699b1c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - settings: {instanceID: 0}
+  - mainCam: {instanceID: 0}
+  - player: {instanceID: 0}
+  - mc: {instanceID: 0}
+  - audiomixer: {fileID: 24100000, guid: 8282da161c2856d4fb9dd6e7488fbd48, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

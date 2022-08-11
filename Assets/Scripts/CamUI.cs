@@ -63,6 +63,7 @@ public class CamUI : MonoBehaviour
                 testPlayer.GetComponent<PlaceWaterfall>().enabled = false;
                 testPlayer.GetComponent<PlaceGears>().enabled = false;
                 testPlayer.GetComponent<PlaceSunLight>().enabled = false;
+                testPlayer.GetComponent<PlaceColorRoom>().enabled = false;
             }
         }
 
@@ -86,6 +87,7 @@ public class CamUI : MonoBehaviour
                 testPlayer.GetComponent<PlaceWaterfall>().enabled = true;
                 testPlayer.GetComponent<PlaceGears>().enabled = true;
                 testPlayer.GetComponent<PlaceSunLight>().enabled = true;
+                testPlayer.GetComponent<PlaceColorRoom>().enabled = true;
             }
             else
             {
@@ -104,6 +106,7 @@ public class CamUI : MonoBehaviour
                 testPlayer.GetComponent<PlaceWaterfall>().enabled = false;
                 testPlayer.GetComponent<PlaceGears>().enabled = false;
                 testPlayer.GetComponent<PlaceSunLight>().enabled = false;
+                testPlayer.GetComponent<PlaceColorRoom>().enabled = false;
             }
         }
 

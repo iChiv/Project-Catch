@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PickUpCamera : MonoBehaviour
 {
-    GameObject MainCam;
-    GameObject Player;
-    GameObject CamForPlayer;
+    [SerializeField] GameObject MainCam;
+    [SerializeField] GameObject Player;
+    [SerializeField] GameObject CamForPlayer;
     GameObject Canvas;
     GameObject Check;
     RaycastHit hit;
@@ -28,12 +28,12 @@ public class PickUpCamera : MonoBehaviour
         {
             if (hit.collider.tag == "camObj")
             {
-                Check.gameObject.SetActive(true);
+//                Check.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.SetActive(false);
                     CamForPlayer.gameObject.SetActive(true);
-                    Check.gameObject.SetActive(false);
+//                    Check.gameObject.SetActive(false);
                     Player.GetComponent<CamUI>().enabled = true;
                 }
             }

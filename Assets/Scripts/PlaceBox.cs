@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlaceBox : MonoBehaviour
 {
+    public AudioSource projectSound;
     public GameObject mainCam;
     RaycastHit hit;
 
@@ -44,6 +45,7 @@ public class PlaceBox : MonoBehaviour
                 cubeReady1.SetActive(true);
                 if(Input.GetMouseButtonDown(0))
                 {
+                    projectSound.Play();
                     cubeOK1.SetActive(true);
                     cubeReady1.SetActive(false);
                     CubePic.SetActive(false);
@@ -59,6 +61,7 @@ public class PlaceBox : MonoBehaviour
                 cubeReady2.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
+                    projectSound.Play();
                     cubeOK2.SetActive(true);
                     cubeReady2.SetActive(false);
                     cubeReady2.GetComponent<MeshRenderer>().enabled = false;
@@ -75,6 +78,7 @@ public class PlaceBox : MonoBehaviour
                 cubeReady3.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
+                    projectSound.Play();
                     cubeOK3.SetActive(true);
                     cubeReady3.SetActive(false);
                     CubePic.SetActive(false);

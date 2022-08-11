@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class PlaceWaterfall : MonoBehaviour
 {
+    public AudioSource projectSound;
+    public GameObject watfallSound2;
     public GameObject mainCam;
     RaycastHit hit;
     [SerializeField] GameObject cliffwf1;
@@ -18,14 +20,17 @@ public class PlaceWaterfall : MonoBehaviour
 
     public GameObject waterfallReady;
     public GameObject waterfallOK;
+    public GameObject waterfallOK_s;
     public GameObject waterfallCheck;
     public GameObject waterfallPic;
     public GameObject waterfallPicPro;
+    public GameObject wf_sPic;
+    public GameObject wf_sPicPro;
 
     // Update is called once per frame
     void Update()
     {
-        if (waterfallPic.activeSelf == true)
+        if (waterfallPic.activeSelf == true || wf_sPic.activeSelf == true)
         {
             cliffwf1.GetComponent<MeshRenderer>().enabled = true;
             cliffwf2.GetComponent<MeshRenderer>().enabled = true;
@@ -52,17 +57,39 @@ public class PlaceWaterfall : MonoBehaviour
                 waterfallReady.GetComponent<MeshRenderer>().enabled = true;
                 if (Input.GetMouseButtonDown(0))
                 {
+                    projectSound.Play();
                     waterfallOK.GetComponent<DOTweenAnimation>().DOPlay();
-                    waterfallReady.SetActive(false);
+                    waterfallReady.GetComponent<MeshRenderer>().enabled = false;
                     waterfallPic.gameObject.SetActive(false);
                     waterfallPicPro.SetActive(false);
+                    watfallSound2.SetActive(true);
                 }
             }
             else
             {
                 waterfallReady.GetComponent<MeshRenderer>().enabled = false;
             }
+        }
 
+        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 50, layerMask) && wf_sPic.activeSelf == true)
+        {
+            //Debug.Log(hit.collider.name);
+            if (hit.collider.gameObject == waterfallCheck)
+            {
+                waterfallReady.GetComponent<MeshRenderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    projectSound.Play();
+                    waterfallOK_s.GetComponent<MeshRenderer>().enabled = true;
+                    waterfallReady.GetComponent<MeshRenderer>().enabled = false;
+                    wf_sPic.gameObject.SetActive(false);
+                    wf_sPicPro.SetActive(false);
+                }
+            }
+            else
+            {
+                waterfallReady.GetComponent<MeshRenderer>().enabled = false;
+            }
         }
     }
 

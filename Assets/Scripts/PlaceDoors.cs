@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlaceDoors : MonoBehaviour
 {
+    public AudioSource projectSound;
     public GameObject mainCam;
     RaycastHit hit;
     GameObject Gear;
@@ -24,6 +25,12 @@ public class PlaceDoors : MonoBehaviour
     [SerializeField] GameObject Projection3;
     [SerializeField] GameObject GuideUIwasd;
 
+    [SerializeField] GameObject placeable1;
+    [SerializeField] GameObject placeable11;
+    [SerializeField] GameObject placeable2;
+    [SerializeField] GameObject placeable21;
+    [SerializeField] GameObject placeable22;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +46,24 @@ public class PlaceDoors : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(DoorPic.activeSelf == true)
+        {
+            placeable1.SetActive(true);
+            placeable2.SetActive(true);
+            placeable11.SetActive(true);
+            placeable21.SetActive(true);
+            placeable22.SetActive(true);
+        }
+        else
+        {
+            placeable1.SetActive(false);
+            placeable2.SetActive(false);
+            placeable11.SetActive(false);
+            placeable21.SetActive(false);
+            placeable22.SetActive(false);
+        }
+
+
         if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, 30) && DoorPic.activeSelf == true)
         {
             //Debug.Log(hit.collider.name);
@@ -47,6 +72,7 @@ public class PlaceDoors : MonoBehaviour
                 Projection2.gameObject.SetActive(true);
                 if(Input.GetMouseButtonDown(0))
                 {
+                    projectSound.Play();
                     DoorClose2.gameObject.SetActive(false);
                     Projection2.gameObject.SetActive(false);
                     DoorPic.gameObject.SetActive(false);
@@ -63,6 +89,7 @@ public class PlaceDoors : MonoBehaviour
                 Projection1.gameObject.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
+                    projectSound.Play();
                     DoorClose1.gameObject.SetActive(false);
                     Projection1.gameObject.SetActive(false);
                     DoorPic.gameObject.SetActive(false);
@@ -79,6 +106,7 @@ public class PlaceDoors : MonoBehaviour
                 Projection3.gameObject.SetActive(true);
                 if (Input.GetMouseButtonDown(0))
                 {
+                    projectSound.Play();
                     DoorClose3.gameObject.SetActive(false);
                     Projection3.gameObject.SetActive(false);
                     DoorPic.gameObject.SetActive(false);

@@ -20,6 +20,7 @@ public class Waterfall : MonoBehaviour
 
     public GameObject WaterfallControl2;
     public GameObject gearWater;
+    public GameObject wfSound1;
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class Waterfall : MonoBehaviour
             if( indicator3.activeSelf == true )
             {
                 WaterfallControl.GetComponent<DOTweenAnimation>().DOPlay();
+                wfSound1.SetActive(true);
             }
         }
     }
