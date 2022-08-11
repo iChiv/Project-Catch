@@ -12,6 +12,8 @@ public class poster : MonoBehaviour
     public GameObject leftArrow;
     public GameObject rightArrow;
 
+    public AudioSource confirmed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,18 +45,21 @@ public class poster : MonoBehaviour
     {
         if (poster1.activeSelf == true)
         {
+            confirmed.Play();
             poster1.SetActive(false);
             poster2.SetActive(true);
         }
 
         else if (poster2.activeSelf == true)
         {
+            confirmed.Play();
             poster2.SetActive(false);
             poster3.SetActive(true);
         }
 
         else if (poster3.activeSelf == true)
         {
+            confirmed.Play();
             poster3.SetActive(false);
             poster4.SetActive(true);
         }
@@ -64,18 +69,21 @@ public class poster : MonoBehaviour
     {
         if (poster4.activeSelf == true)
         {
+            confirmed.Play();
             poster4.SetActive(false);
             poster3.SetActive(true);
         }
 
         else if (poster3.activeSelf == true)
         {
+            confirmed.Play();
             poster3.SetActive(false);
             poster2.SetActive(true);
         }
 
         else if (poster2.activeSelf == true)
         {
+            confirmed.Play();
             poster2.SetActive(false);
             poster1.SetActive(true);
         }

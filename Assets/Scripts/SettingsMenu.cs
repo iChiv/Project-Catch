@@ -13,7 +13,6 @@ public class SettingsMenu : MonoBehaviour
     public GameObject mc;
 
     public AudioMixer audiomixer;
-    public Slider slider;
 
     public AudioSource confirmSound;
 
