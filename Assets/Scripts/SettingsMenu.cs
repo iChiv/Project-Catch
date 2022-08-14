@@ -16,10 +16,12 @@ public class SettingsMenu : MonoBehaviour
 
     public AudioSource confirmSound;
 
+    private float fixedDeltaTime;
+
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        this.fixedDeltaTime = Time.fixedDeltaTime;
     }
 
     // Update is called once per frame
@@ -27,8 +29,9 @@ public class SettingsMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(settings.activeSelf == false)
+            if(settings.activeSelf == false && Time.timeScale == 1f)
             {
+                Time.timeScale = 0f;
                 settings.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -38,6 +41,7 @@ public class SettingsMenu : MonoBehaviour
             }
             else
             {
+                Time.timeScale = 1f;
                 settings.SetActive(false);
                 mainCam.GetComponent<CameraLock>().enabled = true;
                 player.GetComponent<PlayerMover>().enabled = true;

@@ -46,4 +46,12 @@ public class PickUpPoster : MonoBehaviour
             }
         }
     }
+
+    public void closePoster()
+    {
+        posterUI.SetActive(false);
+        mainCam.GetComponent<CameraLock>().enabled = true;
+        player.GetComponent<PlayerMover>().enabled = true;
+        mc.GetComponent<FrameRateLock>().enabled = true;
+    }
 }
