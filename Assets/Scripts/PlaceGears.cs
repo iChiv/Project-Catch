@@ -12,6 +12,10 @@ public class PlaceGears : MonoBehaviour
     public GameObject g3sxx_pre;
 
     public AudioSource projectSound;
+    public AudioSource errorSound;
+    bool a = true;
+    bool b = true;
+
     public GameObject mainCam;
     RaycastHit hit;
     int layerMask = 1 << 6;
@@ -86,7 +90,7 @@ public class PlaceGears : MonoBehaviour
             if (hit.collider.gameObject == GearCheck3)
             {
                 GearReady3.GetComponent<MeshRenderer>().enabled = true;
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0)&& a)
                 {
                     projectSound.Play();
                     //GameObject g3s = GameObject.Instantiate(gear3s_pre,c) as GameObject;
@@ -99,6 +103,11 @@ public class PlaceGears : MonoBehaviour
                     GearReady3.GetComponent<MeshRenderer>().enabled = false;
                     GearSpic.SetActive(false);
                     GearSpicPro.SetActive(false);
+                    a = false;
+                }
+                else if (Input.GetMouseButtonDown(0))
+                {
+                    errorSound.Play();
                 }
             }
         }
@@ -108,7 +117,7 @@ public class PlaceGears : MonoBehaviour
             if(hit.collider.gameObject == GearCheck1)
             {
                 GearReady1D.GetComponent<MeshRenderer>().enabled = true;
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0)&&b)
                 {
                     projectSound.Play();
                     //GameObject g1dxxx = Instantiate(g1dxx_pre,transform.position,transform.rotation);
@@ -120,6 +129,11 @@ public class PlaceGears : MonoBehaviour
                     GearReady1D.GetComponent<MeshRenderer>().enabled = false;
                     GearDpic.SetActive(false);
                     GearDpicPro.SetActive(false);
+                    b = false;  
+                }
+                else if (Input.GetMouseButtonDown(0))
+                {
+                    errorSound.Play();
                 }
             }
             if (hit.collider.gameObject == GearCheck3)
