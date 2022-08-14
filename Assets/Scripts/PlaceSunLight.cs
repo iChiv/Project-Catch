@@ -43,4 +43,9 @@ public class PlaceSunLight : MonoBehaviour
             }
         }
     }
+
+    private void OnDisable()
+    {
+        elevatorCheck.SetActive(false);
+    }
 }

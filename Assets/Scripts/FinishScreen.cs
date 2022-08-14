@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using DG.Tweening;
 
 public class FinishScreen : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class FinishScreen : MonoBehaviour
     public GameObject coinCount1;
     public GameObject coinCount2;
     public GameObject coinCount3;
+    public GameObject coinBouns;
 
     public AudioSource confirmSound;
 
@@ -28,6 +30,11 @@ public class FinishScreen : MonoBehaviour
         mainCam.GetComponent<CameraLock>().enabled = false;
         player.GetComponent<PlayerMover>().enabled = false;
         mc.GetComponent<FrameRateLock>().enabled = false;
+
+        coinCount1.GetComponent<DOTweenAnimation>().DOPause();
+        coinCount2.GetComponent<DOTweenAnimation>().DOPause();
+        coinCount3.GetComponent<DOTweenAnimation>().DOPause();
+        coinBouns.GetComponent<DOTweenAnimation>().DOPause();
     }
     // Update is called once per frame
     void Update()
@@ -36,18 +43,19 @@ public class FinishScreen : MonoBehaviour
         Cursor.visible = true;
         if(coins == 2)
         {
-            coinCount1.SetActive(true);
+            coinCount1.GetComponent<DOTweenAnimation>().DOPlay();
         }
         else if(coins == 1)
         {
-            coinCount1.SetActive(true);
-            coinCount2.SetActive(true);
+            coinCount1.GetComponent<DOTweenAnimation>().DOPlay();
+            coinCount2.GetComponent<DOTweenAnimation>().DOPlay();
         }
         else if(coins == 0)
         {
-            coinCount1.SetActive(true);
-            coinCount2.SetActive(true);
-            coinCount3.SetActive(true);
+            coinCount1.GetComponent<DOTweenAnimation>().DOPlay();
+            coinCount2.GetComponent<DOTweenAnimation>().DOPlay();
+            coinCount3.GetComponent<DOTweenAnimation>().DOPlay();
+            coinBouns.GetComponent<DOTweenAnimation>().DOPlay();
         }
         else
         {
@@ -67,5 +75,11 @@ public class FinishScreen : MonoBehaviour
     {
         confirmSound.Play();
         Application.Quit();
+    }
+
+    public void getBouns()
+    {
+        confirmSound.Play();
+        SceneManager.LoadScene("WhiteBox");
     }
 }

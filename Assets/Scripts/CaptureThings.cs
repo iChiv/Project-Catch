@@ -33,9 +33,12 @@ public class CaptureThings : MonoBehaviour
     public GameObject Block1;
     public GameObject Block2;
     public GameObject Block3;
+    public GameObject Block4;
     public GameObject BlockChecked1;
     public GameObject BlockChecked2;
     public GameObject BlockChecked3;
+
+    public GameObject BlockChecked4;
 
     public GameObject BridgePic;
     public GameObject BridgePicPro;
@@ -309,6 +312,37 @@ public class CaptureThings : MonoBehaviour
             else
             {
                 BlockChecked3.SetActive(false);
+            }
+
+            if (hit.collider.gameObject == Block4)
+            {
+                BlockChecked4.GetComponent<Renderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    catchSound.Play();
+                    BridgePic.SetActive(true);
+                    BridgePicPro.SetActive(true);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
+                    colorDoorPic.SetActive(false);
+                    colorDoorPicPro.SetActive(false);
+                    Gear_dPic.SetActive(false);
+                    Gear_dPicPro.SetActive(false);
+                    wf_s.SetActive(false);
+                    wf_sPro.SetActive(false);
+                }
+            }
+            else
+            {
+                BlockChecked4.GetComponent<Renderer>().enabled = false;
             }
             //waterfall
             if(hit.collider.gameObject == Cube1)
@@ -748,7 +782,70 @@ public class CaptureThings : MonoBehaviour
                 gearCheck2D.GetComponent<MeshRenderer>().enabled = false;
             }
 
-            if (hit.collider.gameObject == gearActive3 && Gear_S3.activeSelf == true)
+            //if (hit.collider.gameObject == gearActive3 && Gear_S3.activeSelf == true)
+            //{
+            //    gearCheck3.GetComponent<MeshRenderer>().enabled = true;
+            //    if (Input.GetMouseButtonDown(0))
+            //    {
+            //        catchSound.Play();
+            //        gearCheck3.GetComponent<MeshRenderer>().enabled = false;
+            //        Gear_sPic.SetActive(true);
+            //        Gear_sPicPro.SetActive(true);
+
+            //        Gear_dPic.SetActive(false);
+            //        Gear_dPicPro.SetActive(false);
+
+            //        WaterfallPic.SetActive(false);
+            //        WaterfallPicPro.SetActive(false);
+            //        CubePic.SetActive(false);
+            //        CubePicPro.SetActive(false);
+            //        DoorPic.SetActive(false);
+            //        DoorPicPro.SetActive(false);
+            //        BridgePic.SetActive(false);
+            //        BridgePicPro.SetActive(false);
+            //        sunPic.SetActive(false);
+            //        sunPicPro.SetActive(false);
+            //        colorDoorPic.SetActive(false);
+            //        colorDoorPicPro.SetActive(false);
+            //        wf_s.SetActive(false);
+            //        wf_sPro.SetActive(false);
+            //    }
+            //}
+            //else
+            //{
+            //    gearCheck3.GetComponent<MeshRenderer>().enabled = false;
+            //}
+
+            if (hit.collider.gameObject == gearActive3 && REC.activeSelf == true && Gear_D3.activeSelf == true)
+            {
+                gearCheck3D.GetComponent<MeshRenderer>().enabled = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    catchSound.Play();
+                    gearCheck3D.GetComponent<MeshRenderer>().enabled = false;
+                    Gear_dPic.SetActive(true);
+                    Gear_dPicPro.SetActive(true);
+
+                    Gear_sPic.SetActive(false);
+                    Gear_sPicPro.SetActive(false);
+
+                    WaterfallPic.SetActive(false);
+                    WaterfallPicPro.SetActive(false);
+                    CubePic.SetActive(false);
+                    CubePicPro.SetActive(false);
+                    DoorPic.SetActive(false);
+                    DoorPicPro.SetActive(false);
+                    BridgePic.SetActive(false);
+                    BridgePicPro.SetActive(false);
+                    sunPic.SetActive(false);
+                    sunPicPro.SetActive(false);
+                    colorDoorPic.SetActive(false);
+                    colorDoorPicPro.SetActive(false);
+                    wf_s.SetActive(false);
+                    wf_sPro.SetActive(false);
+                }
+            }
+            else if (hit.collider.gameObject == gearActive3 && Gear_D3.activeSelf == true)
             {
                 gearCheck3.GetComponent<MeshRenderer>().enabled = true;
                 if (Input.GetMouseButtonDown(0))
@@ -780,40 +877,6 @@ public class CaptureThings : MonoBehaviour
             else
             {
                 gearCheck3.GetComponent<MeshRenderer>().enabled = false;
-            }
-
-            if (hit.collider.gameObject == gearActive3 && REC.activeSelf == true && Gear_D3.activeSelf == true)
-            {
-                gearCheck3D.GetComponent<MeshRenderer>().enabled = true;
-                if (Input.GetMouseButtonDown(0))
-                {
-                    catchSound.Play();
-                    gearCheck3D.GetComponent<MeshRenderer>().enabled = false;
-                    Gear_dPic.SetActive(true);
-                    Gear_dPicPro.SetActive(true);
-
-                    Gear_sPic.SetActive(false);
-                    Gear_sPicPro.SetActive(false);
-
-                    WaterfallPic.SetActive(false);
-                    WaterfallPicPro.SetActive(false);
-                    CubePic.SetActive(false);
-                    CubePicPro.SetActive(false);
-                    DoorPic.SetActive(false);
-                    DoorPicPro.SetActive(false);
-                    BridgePic.SetActive(false);
-                    BridgePicPro.SetActive(false);
-                    sunPic.SetActive(false);
-                    sunPicPro.SetActive(false);
-                    colorDoorPic.SetActive(false);
-                    colorDoorPicPro.SetActive(false);
-                    wf_s.SetActive(false);
-                    wf_sPro.SetActive(false);
-                }
-            }
-            else
-            {
-                gearCheck3D.GetComponent<MeshRenderer>().enabled = false;
             }
 
             //sun
@@ -900,6 +963,7 @@ public class CaptureThings : MonoBehaviour
             BlockChecked1.SetActive(false);
             BlockChecked2.SetActive(false);
             BlockChecked3.SetActive(false);
+            BlockChecked4.GetComponent<Renderer>().enabled = false;
             CubeChecked1.SetActive(false);
             CubeChecked2.SetActive(false);
             CubeChecked3.SetActive(false);

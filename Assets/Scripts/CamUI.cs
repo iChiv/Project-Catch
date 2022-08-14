@@ -52,9 +52,10 @@ public class CamUI : MonoBehaviour
                 //Q_all.GetComponent<DOTweenAnimation>().DORestart();
                 //REC_all.GetComponent<DOTweenAnimation>().DORestart();
                 //PHO_all.GetComponent<DOTweenAnimation>().DORestart();
-                CamforPlayer.SetActive(true);
+                //CamforPlayer.SetActive(true);
                 UI.GetComponent<DOTweenAnimation>().DOPlayBackwards();
                 Invoke("UIoff", 0.6f);
+                CamforPlayer.SetActive(true);
                 //UI.SetActive(false);
                 testPlayer.GetComponent<CaptureThings>().enabled = false;
                 testPlayer.GetComponent<PlaceDoors>().enabled = false;

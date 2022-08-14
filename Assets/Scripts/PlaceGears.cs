@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlaceGears : MonoBehaviour
 {
+    public GameObject g1_postion;
+    public GameObject g3_postion;
+
+    public GameObject g1dxx_pre;
+    public GameObject g3sxx_pre;
+
     public AudioSource projectSound;
     public GameObject mainCam;
     RaycastHit hit;
@@ -83,7 +90,12 @@ public class PlaceGears : MonoBehaviour
                 {
                     projectSound.Play();
                     //GameObject g3s = GameObject.Instantiate(gear3s_pre,c) as GameObject;
+                    //GameObject g3s = Instantiate(g3sxx_pre, transform.position, transform.rotation);
+                    //g3s.transform.position = g3_postion.transform.position;
+                    GearOK3_S.transform.position = g3_postion.transform.position;
+                    GearOK3_S.transform.rotation = g3_postion.transform.rotation;
                     GearOK3_S.SetActive(true);
+                    GearOK3_S.GetComponent<DOTweenPath>().DORestart();
                     GearReady3.GetComponent<MeshRenderer>().enabled = false;
                     GearSpic.SetActive(false);
                     GearSpicPro.SetActive(false);
@@ -99,7 +111,12 @@ public class PlaceGears : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     projectSound.Play();
+                    //GameObject g1dxxx = Instantiate(g1dxx_pre,transform.position,transform.rotation);
+                    //g1dxxx.transform.position = g1_postion.transform.position;
+                    GearOK1_Dxxx.transform.position = g1_postion.transform.position;
+                    GearOK1_Dxxx.transform.rotation = g1_postion.transform.rotation;
                     GearOK1_Dxxx.SetActive(true);
+                    GearOK1_Dxxx.GetComponent<DOTweenPath>().DORestart();
                     GearReady1D.GetComponent<MeshRenderer>().enabled = false;
                     GearDpic.SetActive(false);
                     GearDpicPro.SetActive(false);
@@ -126,5 +143,9 @@ public class PlaceGears : MonoBehaviour
             GearReady3.GetComponent<MeshRenderer>().enabled = false;
             GearReady3D.GetComponent<MeshRenderer>().enabled = false;
         }
+    }
+    private void OnDisable()
+    {
+        GearBox.GetComponent<Renderer>().enabled = false;
     }
 }

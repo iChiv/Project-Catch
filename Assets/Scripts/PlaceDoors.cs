@@ -128,5 +128,10 @@ public class PlaceDoors : MonoBehaviour
         Projection1.SetActive(false);
         Projection2.SetActive(false);
         Projection3.gameObject.SetActive(false);
+        placeable1.SetActive(false);
+        placeable2.SetActive(false);
+        placeable11.SetActive(false);
+        placeable21.SetActive(false);
+        placeable22.SetActive(false);
     }
 }

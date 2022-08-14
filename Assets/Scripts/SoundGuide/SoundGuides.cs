@@ -68,6 +68,7 @@ public class SoundGuides : MonoBehaviour
 
         if(guide3 == true && mainCAM.activeSelf == true)
         {
+            startGuide.Stop();
             PickPoster.Stop();
             PickCam.Play();
             guide3 = false;

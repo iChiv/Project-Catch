@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 2823847991977017862}
   - component: {fileID: 2823847991977017860}
   - component: {fileID: 2823847991977017867}
+  - component: {fileID: -3727044969259588787}
   m_Layer: 0
   m_Name: Gear3OK_S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2823847991977017863
 Transform:
   m_ObjectHideFlags: 0
@@ -202,7 +203,7 @@ MonoBehaviour:
   path:
     wpLengths:
     - 0
-    - 1.2712065
+    - 2211.3076
     - 1.7084789
     - 1.2415178
     - 1.2807637
@@ -215,7 +216,7 @@ MonoBehaviour:
     - 0.7885483
     - 1.1205163
     wps:
-    - {x: 1464.1173, y: 1650.98, z: -153.6238}
+    - {x: 0.00000007163932, y: -0.00000016889818, z: 0.7919867}
     - {x: 1464.2676, y: 1649.7948, z: -154.05823}
     - {x: 1464.2018, y: 1650.7739, z: -155.45676}
     - {x: 1464.1792, y: 1651.294, z: -156.5839}
@@ -232,21 +233,21 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 130
     controlPoints: []
-    length: 15.194492
+    length: 2225.231
     isFinalized: 1
     timesTable:
     - 0
-    - 0.08366232
-    - 0.19610299
-    - 0.27781138
-    - 0.3621027
-    - 0.47863618
-    - 0.58482516
-    - 0.68802553
-    - 0.7548087
-    - 0.81609696
-    - 0.87435806
-    - 0.92625505
+    - 0.99374294
+    - 0.99451077
+    - 0.99506867
+    - 0.9956442
+    - 0.99644
+    - 0.9971651
+    - 0.9978698
+    - 0.99832577
+    - 0.9987442
+    - 0.99914205
+    - 0.9994964
     - 1
     lengthsTable: []
   inspectorMode: 0
@@ -369,3 +370,15 @@ MonoBehaviour:
   optionalRotationMode: 1
   optionalScrambleMode: 0
   optionalString: 
+--- !u!114 &-3727044969259588787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823847991977017856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a418c9fce209bf47b11195707d8bdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

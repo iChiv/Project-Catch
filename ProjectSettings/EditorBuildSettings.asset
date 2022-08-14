@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 8a26e965cb885c141ae1bd55d9e77899
+  - enabled: 1
+    path: Assets/Scenes/WhiteBox.unity
+    guid: 0757640c749d89240a0d9c3805588a26
   m_configObjects: {}
