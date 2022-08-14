@@ -22,6 +22,8 @@ public class CamUI : MonoBehaviour
     [SerializeField] GameObject REC_all;
     [SerializeField] GameObject PHO_all;
 
+    public GameObject UI_c;
+
     private void Start()
     {
         Q_all.GetComponent<DOTweenAnimation>().DOPlay();
@@ -33,6 +35,7 @@ public class CamUI : MonoBehaviour
         {
             if(CamforPlayer.activeSelf == true)
             {
+                UI_c.GetComponent<UI_Control>().enabled = true;
                 UI.GetComponent<DOTweenAnimation>().DORestart();
                 Q_all.GetComponent<DOTweenAnimation>().DORestart();
                 REC_all.GetComponent<DOTweenAnimation>().DORestart();
@@ -53,6 +56,7 @@ public class CamUI : MonoBehaviour
                 //REC_all.GetComponent<DOTweenAnimation>().DORestart();
                 //PHO_all.GetComponent<DOTweenAnimation>().DORestart();
                 //CamforPlayer.SetActive(true);
+                UI_c.GetComponent<UI_Control>().enabled = false;
                 UI.GetComponent<DOTweenAnimation>().DOPlayBackwards();
                 Invoke("UIoff", 0.6f);
                 CamforPlayer.SetActive(true);

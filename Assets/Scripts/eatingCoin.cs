@@ -6,6 +6,8 @@ public class eatingCoin : MonoBehaviour
 {
     public GameObject coin;
     public GameObject player;
+
+    public AudioSource coinSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class eatingCoin : MonoBehaviour
         if(other.gameObject == player)
         {
             GameObject.Destroy(coin);
+            coinSound.Play();
         }
     }
 }

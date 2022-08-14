@@ -31,6 +31,10 @@ public class PlaceDoors : MonoBehaviour
     [SerializeField] GameObject placeable21;
     [SerializeField] GameObject placeable22;
 
+    [SerializeField] GameObject doorFrame1;
+    [SerializeField] GameObject doorFrame2;
+    [SerializeField] GameObject doorFrame3;
+
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +99,11 @@ public class PlaceDoors : MonoBehaviour
                     DoorPic.gameObject.SetActive(false);
                     DoorPicPro.SetActive(false);
                     DoorOpen1 .GetComponent<BoxCollider>().enabled = true;
+
+                    doorFrame1.GetComponent<Renderer>().enabled = true;
+                    doorFrame2.GetComponent<Renderer>().enabled = true;
+                    doorFrame3.GetComponent<Renderer>().enabled = true;
+
                 }
             }
             else
