@@ -18,6 +18,7 @@ public class UI_Control : MonoBehaviour
 
     private void OnEnable()
     {
+        camForward = camera.GetComponent<Camera>().transform.forward;
         catchCamera();
     }
 
@@ -25,8 +26,9 @@ public class UI_Control : MonoBehaviour
     void Update()
     {
         camForwardNow = camera.GetComponent<Camera>().transform.forward;
-        
-        
+
+        uiRotate();
+
         if (isCatching) 
         {
             uiRotate();
@@ -38,10 +40,6 @@ public class UI_Control : MonoBehaviour
         }
         
     }
-
-
-
-
 
     public void catchCamera() //call func when ui open
     {
@@ -78,7 +76,6 @@ public class UI_Control : MonoBehaviour
             //x axis +
         }
         #endregion
-
 
 
 

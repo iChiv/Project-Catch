@@ -9,6 +9,7 @@ public class PickUpPoster : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject poster;
     [SerializeField] GameObject posterUI;
+    [SerializeField] GameObject focusUI;
     int layerMask = 1 << 6;
 
     public GameObject mc;
@@ -25,6 +26,7 @@ public class PickUpPoster : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
+                        focusUI.SetActive(false);
                         posterUI.SetActive(true);
                         mainCam.GetComponent<CameraLock>().enabled = false;
                         player.GetComponent<PlayerMover>().enabled = false;
@@ -39,6 +41,7 @@ public class PickUpPoster : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                focusUI.SetActive(true);
                 posterUI.SetActive(false);
                 mainCam.GetComponent<CameraLock>().enabled = true;
                 player.GetComponent<PlayerMover>().enabled = true;
@@ -49,6 +52,7 @@ public class PickUpPoster : MonoBehaviour
 
     public void closePoster()
     {
+        focusUI.SetActive(true);
         posterUI.SetActive(false);
         mainCam.GetComponent<CameraLock>().enabled = true;
         player.GetComponent<PlayerMover>().enabled = true;

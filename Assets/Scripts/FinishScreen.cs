@@ -68,18 +68,20 @@ public class FinishScreen : MonoBehaviour
     public void ReStartGame()
     {
         confirmSound.Play();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Level_01");
     }
 
     public void exitGame()
     {
-        confirmSound.Play();
+        //confirmSound.Play();
         Application.Quit();
     }
 
     public void getBouns()
     {
-        confirmSound.Play();
+        //confirmSound.Play();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("WhiteBox");
     }
 }

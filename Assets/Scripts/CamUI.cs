@@ -24,6 +24,8 @@ public class CamUI : MonoBehaviour
 
     public GameObject UI_c;
 
+    bool Uionoff = true;
+
     private void Start()
     {
         Q_all.GetComponent<DOTweenAnimation>().DOPlay();
@@ -58,7 +60,7 @@ public class CamUI : MonoBehaviour
                 //CamforPlayer.SetActive(true);
                 UI_c.GetComponent<UI_Control>().enabled = false;
                 UI.GetComponent<DOTweenAnimation>().DOPlayBackwards();
-                Invoke("UIoff", 0.6f);
+                Invoke("UIoff", 0.3f);
                 CamforPlayer.SetActive(true);
                 //UI.SetActive(false);
                 testPlayer.GetComponent<CaptureThings>().enabled = false;

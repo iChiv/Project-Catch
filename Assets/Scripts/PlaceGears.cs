@@ -96,8 +96,8 @@ public class PlaceGears : MonoBehaviour
                     //GameObject g3s = GameObject.Instantiate(gear3s_pre,c) as GameObject;
                     //GameObject g3s = Instantiate(g3sxx_pre, transform.position, transform.rotation);
                     //g3s.transform.position = g3_postion.transform.position;
-                    GearOK3_S.transform.position = g3_postion.transform.position;
-                    GearOK3_S.transform.rotation = g3_postion.transform.rotation;
+                    //GearOK3_S.transform.position = g3_postion.transform.position;
+                    //GearOK3_S.transform.rotation = g3_postion.transform.rotation;
                     GearOK3_S.SetActive(true);
                     GearOK3_S.GetComponent<DOTweenPath>().DORestart();
                     GearReady3.GetComponent<MeshRenderer>().enabled = false;
@@ -122,8 +122,8 @@ public class PlaceGears : MonoBehaviour
                     projectSound.Play();
                     //GameObject g1dxxx = Instantiate(g1dxx_pre,transform.position,transform.rotation);
                     //g1dxxx.transform.position = g1_postion.transform.position;
-                    GearOK1_Dxxx.transform.position = g1_postion.transform.position;
-                    GearOK1_Dxxx.transform.rotation = g1_postion.transform.rotation;
+                    //GearOK1_Dxxx.transform.position = g1_postion.transform.position;
+                    //GearOK1_Dxxx.transform.rotation = g1_postion.transform.rotation;
                     GearOK1_Dxxx.SetActive(true);
                     GearOK1_Dxxx.GetComponent<DOTweenPath>().DORestart();
                     GearReady1D.GetComponent<MeshRenderer>().enabled = false;
